@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 1. Consent Mode defaults: everything denied until the visitor chooses -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
+    security_storage:      localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: 'These help us understand how visitors interact with the website.',
+        defaultValue: false,
+        gtag: 'analytics_storage'
+      },
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: 'These are required for the website to work properly.',
+        required: true
+      }
+    ]
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+<title>About - Elodie Soler</title>
+<meta name="description" content="Elodie Soler is a Senior Product Designer specialising in B2B SaaS and operational systems - who builds what she designs and is moving toward AI-native product design.">
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="about-page">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero wide">
+  <div class="eyebrow rise d1">
+    <span class="tag">About me</span>
+  </div>
+  <h1 class="rise d2">Started with a pencil.<br>Still haven't stopped.</h1>
+  <p class="lede rise d3">Senior Product Designer in B2B SaaS and operational systems.<br>Bringing field research, commercial insight and AI-integrated practice.</p>
+</header>
+
+<!-- ===== BIO ===== -->
+<section class="section">
+  <div class="wrap bio">
+    <p>I've been drawing since I was 7. That instinct to make things, not just imagine them, is what led me to industrial design, and then to designing B2B systems: from a robot control interface, to field-operation platforms, to compliance systems.</p>
+    <p>What sharpened me most was getting closer to the commercial side of the business: understanding commercial constraints, connecting design decisions directly to revenue and measuring their impact.</p>
+    <p>Now I ask: <strong>how does this move the person using it and can we measure that?</strong></p>
+    <p>Self-taught in HTML, CSS and AI-assisted development, I can experiment, prototype and test what I design early in the process, without pulling developers away from their own work.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== TOOLKIT ===== -->
+<section class="section wide">
+  <span class="kicker">What I bring</span>
+  <h2>Design, build and measure</h2>
+  <p class="sub">I work across disciplines that usually sit with separate people, which is what let's small teams move quickly without losing rigour.</p>
+
+  <div class="toolkit">
+    <div class="tk">
+      <h3 class="tk-h">Design</h3>
+      <ul>
+        <li>Field research</li>
+        <li>Sketching and early ideation</li>
+        <li>Product and system design</li>
+        <li>UI/UX design</li>
+      </ul>
+    </div>
+    <div class="tk">
+      <h3 class="tk-h">Build</h3>
+      <ul>
+        <li>HTML / CSS / JavaScript</li>
+        <li>AI-assisted development</li>
+        <li>Rapid prototyping</li>
+      </ul>
+    </div>
+    <div class="tk">
+      <h3 class="tk-h">Measure</h3>
+      <ul>
+        <li>Connecting design to revenue</li>
+        <li>Google Analytics 4</li>
+        <li>Behavioural insight</li>
+        <li>Commercial framing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== SKETCHING OUT LOUD (real reflection + real illustrations) ===== -->
+<section class="section">
+  <div class="sketch-intro">
+    <span class="kicker">Sketching out loud</span>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 4px;">Thinking on paper</h2>
+    <blockquote>
+      <p>Whatever the project, sketching remains my go-to for early brainstorming. It gives stakeholders something loose enough to react to, before anyone gets attached to high-fidelity designs. With AI accelerating the path to resolution, that flexibility matters more than ever.</p>
+      <p>I also illustrate my reflections on the quieter truths of working in product and software development, the things everyone notices but few say out loud.</p>
+    </blockquote>
+  </div>
+
+  <div class="wide">
+    <div class="gallery">
+      <figure><img loading="lazy" src="/images/about/map-of-opportunities-ewi-p1.jpg" alt="Map of opportunities — external wall insulation part 1"></figure>
+      <figure><img loading="lazy" src="/images/about/map-of-opportunities-ewi-p2.jpg" alt="Map of opportunities — external wall insulation part 2"></figure>
+      <figure><img loading="lazy" src="/images/about/man-wfh.png" alt="Illustration of working from home"></figure>
+      <figure><img loading="lazy" src="/images/home/about-sketch.jpg" alt="Sketch exploring AI capabilities in product work"></figure>
+      <figure><img loading="lazy" src="/images/about/late-wakeup-wfh.png" alt="Illustration — a late wake-up working from home"></figure>
+      <figure><img loading="lazy" src="/images/about/pd-plan.jpg" alt="Product design planning sketch"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta wide">
+  <h2>Like how I think?</h2>
+  <p>I'm always curious to hear about challenging project, especially in manufacturing, energy efficiency and sustainability. Get in touch.</p>
+  <a class="btn" id="email-cta" href="mailto:solerelodie@gmail.com?subject=Hello%20from%20your%20portfolio">Email me</a>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="https://www.instagram.com/elodieso.design/">Instagram</a>
+    </div>
+    <div class="copy">Elodie Soler © 2026 · All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 1. Consent Mode defaults: everything denied until the visitor chooses -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
+    security_storage:      localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: 'These help us understand how visitors interact with the website.',
+        defaultValue: false,
+        gtag: 'analytics_storage'
+      },
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: 'These are required for the website to work properly.',
+        required: true
+      }
+    ]
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+<title>Quality &amp; Compliance System - Elodie Soler</title>
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="case-study-page">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- PAGE START -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero wide">
+  <div class="eyebrow rise d1">
+    <span class="tag">B2B</span>
+    <span class="tag">SaaS</span>
+    <span class="tag">Platform redesign</span>
+  </div>
+  <h1 class="rise d2">Quality &amp; Compliance System for Field Operations</h1>
+  <p class="lede rise d3">Halving the time to access critical data and making the platform easier to scale and maintain.</p>
+</header>
+
+<div class="wide rise d4">
+  <figure class="figure">
+    <img src="/images/projects/quality-and-compliance-system/hero.png" alt="Key screens shown on a tablet">
+  </figure>
+</div>
+
+<!-- ===== META STRIP ===== -->
+<div class="wrap">
+  <dl class="meta">
+    <div><dt>My role</dt><dd>Product Owner &amp; Solo Product Designer</dd></div>
+    <div><dt>Type</dt><dd>B2B SaaS platform redesign</dd></div>
+    <div><dt>Domain</dt><dd>Field operations / compliance</dd></div>
+  </dl>
+</div>
+
+<!-- ===== METRICS BAND ===== -->
+<div class="wrap">
+  <div class="metrics">
+    <div class="metric">
+      <div class="num">50%</div>
+      <div class="lbl">reduction in time to access critical information</div>
+    </div>
+  </div>
+</div> 
+
+<!-- ===== CONTEXT ===== -->
+<section class="wrap">
+  <span class="kicker">Context</span>
+  <h2>A platform that outgrew its structure</h2>
+  <p>The platform supports the management of underfloor insulation surveys and installations across distributed field teams.</p>
+  <p>Over time, it evolved without a coherent design system or information architecture. As a result:</p>
+  <ul class="clean">
+    <li>User experience became inconsistent</li>
+    <li>Core workflows required unnecessary navigation</li>
+    <li>The platform became increasingly difficult to scale and maintain</li>
+  </ul>
+  <p>Alongside a backend migration, we redesigned the frontend to improve usability, scalability and accessibility across the system.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ===== CHALLENGE ===== -->
+<section class="wrap">
+  <span class="kicker">Challenge</span>
+  <h2>Structure out of step with real use</h2>
+  <p>The platform had evolved without a clear information architecture or design system, creating a growing disconnect between how the system was structured and how users needed to operate in practice. This resulted in:</p>
+  <ul class="clean">
+    <li>Fragmented workflows requiring navigation across multiple screens</li>
+    <li>Poor visibility and access to critical information</li>
+    <li>Redundant features adding unnecessary complexity</li>
+    <li>Long loading times impacting operational efficiency</li>
+  </ul>
+  <p>As the product scaled, these issues made the platform increasingly difficult to maintain, extend and use effectively in real-world operational contexts.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ===== APPROACH ===== -->
+<section class="wrap">
+  <span class="kicker">Approach</span>
+  <h2>Designing for two user groups</h2>
+  <p>To support a shift in market positioning, I defined two primary user groups with distinct but overlapping needs:</p>
+  <ul class="clean">
+    <li><strong>Project Managers:</strong> coordinating surveys and installations</li>
+    <li><strong>Technicians:</strong> executing work in the field</li>
+  </ul>
+  <p>This helped prioritise essential system capabilities and define a clearer structural foundation, including:</p>
+  <ul class="clean">
+    <li>Key system entry points (e.g. property listing and property pages)</li>
+    <li>Enabling features such as deep linking across workflows</li>
+  </ul>
+</section>
+
+<div class="wide">
+  <figure class="figure">
+    <img src="/images/projects/quality-and-compliance-system/information-architecture.jpg" alt="Information architecture of the platform">
+  </figure>
+</div>
+
+<hr class="divider">
+
+<!-- ===== DESIGN SYSTEM ===== -->
+<section class="wrap">
+  <span class="kicker">Design system</span>
+  <h2>Designing for scalability and clarity</h2>
+  <p>The design approach focused on simplifying complexity while ensuring the system could scale with new use cases. This included:</p>
+  <ul class="clean">
+    <li>Creation and evolution of a design system to support consistency and scalability</li>
+    <li>Iterative exploration through low-fidelity wireframes</li>
+    <li>Benchmarking patterns from established products (e.g. search and navigation systems)</li>
+    <li>Continuous validation with operational users</li>
+    <li>Close collaboration with engineering to align on technical constraints</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- ===== DEEP DIVE: PROPERTY PAGE ===== -->
+<section class="wrap">
+  <span class="kicker">Deep dive</span>
+  <h2>Property page, the core operational interface</h2>
+  <p>The Property Page is a critical point in the system, used to access and manage all project-related information. The original interface had evolved incrementally, resulting in:</p>
+  <ul class="clean">
+    <li>High interaction cost</li>
+    <li>Poor information hierarchy</li>
+    <li>Limited scalability as new features were added</li>
+  </ul>
+</section>
+
+<div class="wide">
+  <figure class="figure">
+    <img src="/images/projects/quality-and-compliance-system/property-page-original.png" alt="Original property page design">
+    <figcaption>The original property page, before restructuring.</figcaption>
+  </figure>
+</div>
+
+<section class="wrap">
+  <div class="callout">
+    <span class="kicker">The key design move</span>
+    <p>Rather than a full redesign, I restructured the information architecture to better reflect how users access and prioritise information in real-world contexts.</p>
+  </div>
+  <p>Key improvements included:</p>
+  <ul class="clean">
+    <li>Removing low-value features to reduce cognitive load</li>
+    <li>Grouping high-frequency information for immediate access</li>
+    <li>Introducing clearer hierarchy and separation of data (property vs customer)</li>
+    <li>Adding contextual elements (e.g. property image, client name) to support orientation in the field</li>
+    <li>Designing scalable navigation (including vertical secondary navigation) to accommodate growing system complexity</li>
+  </ul>
+</section>
+
+<div class="wide">
+  <div class="grid2">
+  <figure class="figure"><img src="/images/projects/quality-and-compliance-system/property-page-design-dev.png" alt="Selected screens from design development">
+    <figcaption>Selected screens from design development.</figcaption></figure>
+  <figure class="figure"><img src="/images/projects/quality-and-compliance-system/property-page-final.png" alt="Final property page design">
+    <figcaption>The final property page design.</figcaption>
+  </figure>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== IMPACT ===== -->
+<section class="wrap">
+  <span class="kicker">Outcome</span>
+  <h2>A platform that scales</h2>
+  <p>The redesigned system improved how users navigate and interact with complex data sets:</p>
+  <ul class="clean">
+    <li>50% reduction in time to access critical information</li>
+    <li>Clearer mental models for navigating system workflows</li>
+    <li>Improved usability and accessibility across the platform</li>
+    <li>Reduced complexity, supporting more efficient ongoing development</li>
+  </ul>
+  <p>The platform is now deployed across the company and its accredited installation partners, supporting real-world operations at scale:</p>
+  <ul class="clean">
+    <li>Quicker and easier access to key data, making onsite operations smoother and reducing friction</li>
+    <li>Reduced software development costs for the business</li>
+  </ul>
+  <blockquote>
+    The most interesting challenge was to create and integrate a new design system to scale the platform without redesigning it entirely.
+    <cite>— Key takeaway</cite>
+  </blockquote>
+  <a class="next" href="/projects/robot-control-interface/">Next project →</a>
+</section>
+
+<!-- ===== CTA (mailto) ===== -->
+<section class="cta wrap">
+  <h2>Like how I think?</h2>
+  <p>I'm always curious to hear about challenging project, especially in manufacturing, energy efficiency and sustainability. Get in touch.</p>
+  <a class="btn" id="email-cta" href="mailto:solerelodie@gmail.com?subject=Hello">Email me</a>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="https://www.instagram.com/elodieso.design/">Instagram</a>
+    </div>
+    <div class="copy">Elodie Soler © 2026 · All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- PAGE END -->
+
+<!--
+  OPTIONAL — track the "Email me" click in GA4 (since you have no form,
+  this click IS your conversion). Paste once site-wide, e.g. via a code
+  snippet plugin. Requires gtag (GA4 / Site Kit) already loaded.
+
+  <script>
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact_click', { method: 'email', location: 'case_study' });
+        }
+      });
+    });
+  </script>
+-->
+
+</body>
+</html>

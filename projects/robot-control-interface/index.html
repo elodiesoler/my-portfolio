@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 1. Consent Mode defaults: everything denied until the visitor chooses -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
+    security_storage:      localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: 'These help us understand how visitors interact with the website.',
+        defaultValue: false,
+        gtag: 'analytics_storage'
+      },
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: 'These are required for the website to work properly.',
+        required: true
+      }
+    ]
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+<title>Robot Control Interface Redesign - Elodie Soler</title>
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="case-study-page">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- PAGE START -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero wide">
+  <div class="eyebrow rise d1">
+    <span class="tag">B2B</span>
+    <span class="tag">Robotics operations</span>
+    <span class="tag">Interface redesign</span>
+  </div>
+  <h1 class="rise d2">Robot Control Interface for High Constraints Environment</h1>
+  <p class="lede rise d3">Improving operator performance and increasing user satisfaction from 65% to 92%.</p>
+</header>
+
+<div class="wide rise d4">
+  <figure class="figure">
+    <img src="/images/projects/robot-control-interface/cover.jpg" alt="Insulation installation robot operated on site">
+  </figure>
+</div>
+
+<!-- ===== META STRIP ===== -->
+<div class="wrap">
+  <dl class="meta">
+    <div><dt>My role</dt><dd>Product Designer / Product Lead (end-to-end ownership)</dd></div>
+    <div><dt>Type</dt><dd>Interface redesign</dd></div>
+    <div><dt>Domain</dt><dd>Robotics / underfloor insulation</dd></div>
+  </dl>
+</div>
+
+<!-- ===== METRICS BAND ===== -->
+<div class="wrap">
+  <div class="metrics">
+    <div class="metric">
+      <div class="num">65% &rarr; 92%</div>
+      <div class="lbl">operator satisfaction</div>
+    </div>
+    <div class="metric">
+      <div class="num">50+</div>
+      <div class="lbl">robots deployed in the UK and France</div>
+    </div>
+  </div>
+</div> 
+
+<!-- ===== CONTEXT ===== -->
+<section class="wrap">
+  <span class="kicker">Context</span>
+  <h2>Usability under real operational constraints</h2>
+  <p>The interface is used by installers to operate robotics systems in constrained, low-visibility environments during underfloor insulation installations.</p>
+  <p>In this setting, usability directly impacts:</p>
+  <ul class="clean">
+    <li>Risk of operational errors</li>
+    <li>Speed and precision of execution</li>
+    <li>Operator confidence</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- ===== CHALLENGE ===== -->
+<section class="wrap">
+  <span class="kicker">Challenge</span>
+  <h2>Friction in critical workflows</h2>
+  <p>The existing interface created friction in critical workflows:</p>
+  <ul class="clean">
+    <li>Cluttered navigation increased cognitive load</li>
+    <li>Small camera feed limited visibility in already constrained environments</li>
+    <li>Interaction model required switching between multiple input devices, slowing down task execution</li>
+  </ul>
+  <p>These issues reduced efficiency and increased the likelihood of errors during installation.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ===== APPROACH ===== -->
+<section class="wrap">
+  <span class="kicker">Approach</span>
+  <h2>Designing around real operation</h2>
+  <p>I worked closely with engineers and installers to understand how the interface supported real-world operation. Through interviews and on-site shadowing, we identified a key mismatch between:</p>
+  <ul class="clean">
+    <li>How the system was structured</li>
+    <li>How operators needed to interact with it in practice</li>
+  </ul>
+</section>
+
+<div class="wide">
+  <div class="grid2">
+    <figure class="figure"><img src="/images/projects/robot-control-interface/mk6-gui-onsite.png" alt="The previous Mk6 interface in use on site"></figure>
+    <figure class="figure"><img src="/images/projects/robot-control-interface/spray-pattern.png" alt="Spray pattern control in the interface"></figure>
+  </div>
+</div>
+
+<section class="wrap">
+  <p>The redesign focused on:</p>
+  <ul class="clean">
+    <li>Reducing interaction cost for high-frequency actions</li>
+    <li>Improving visibility and space awareness</li>
+    <li>Aligning the interface with a more fluid, single-input interaction model</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- ===== SOLUTION ===== -->
+<section class="wrap">
+  <span class="kicker">Solution</span>
+  <h2>A focused, scalable interface</h2>
+  <p>I designed a more focused and scalable interface that:</p>
+  <ul class="clean">
+    <li>Maximises the primary camera feed to improve real-time visibility</li>
+    <li>Surfaces essential controls directly within the main workflow</li>
+    <li>Enables navigation via a single input device (gamepad-inspired interaction), reducing friction</li>
+    <li>Simplifies information architecture to support faster decision-making</li>
+    <li>Introduces clearer system feedback (e.g. startup status) to improve operator confidence</li>
+  </ul>
+  <p>The solution was developed iteratively, balancing user needs with the technical constraints of the robotics system (ROS).</p>
+  <div class="callout">
+    <span class="kicker">The key design move</span>
+    <p>Maximising the camera feed and moving to a single gamepad-inspired input, cutting interaction cost exactly where visibility and speed matter most.</p>
+  </div>
+</section>
+
+<div class="wide">
+  <div class="grid2">
+    <figure class="figure"><img src="/images/projects/robot-control-interface/mk7-mapping-1.jpg" alt="Process screenshot — interface mapping (1)"></figure>
+    <figure class="figure"><img src="/images/projects/robot-control-interface/mk7-mapping-2.jpg" alt="Process screenshot — interface mapping (2)"></figure>
+  </div>
+  <div class="grid2">
+  <figure class="figure"><img src="/images/projects/robot-control-interface/gui-latest-screen.jpg" alt="Latest interface design — main control screen"></figure>
+  <figure class="figure"><img src="/images/projects/robot-control-interface/gui-nav-bar.jpg" alt="Design system for navigation menu"></figure>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== FROM THE FIELD (installer testimonials) ===== -->
+<section class="wrap">
+  <span class="kicker">From the field</span>
+  <h2>What installers said</h2>
+  <blockquote>
+    The Mk7 robots are a massive improvement compared to the previous version. The controls are much more user friendly.
+    <cite>— Lee, Installer, Q-Bot</cite>
+  </blockquote>
+  <blockquote>
+    The fact that the spray pattern can be rotated makes it a lot easier to fill areas near walls.
+    <cite>— David, Installer, Mersey Eco Grants</cite>
+  </blockquote>
+  <blockquote>
+    It's quicker and easier to control and the help manual is a great addition.
+    <cite>— John, Installer, Concept Heating</cite>
+  </blockquote>
+</section>
+
+<hr class="divider">
+
+<div class="wide">
+  <div class="grid2">
+    <figure class="figure"><img src="/images/projects/robot-control-interface/cover.jpg" alt="Robot operating on an underfloor installation"></figure>
+    <figure class="figure"><img src="/images/projects/robot-control-interface/installers-onsite.jpg" alt="Installers on site with the robot"></figure>
+  </div>
+</div>
+
+<!-- ===== IMPACT ===== -->
+<section class="wrap">
+  <span class="kicker">Outcome</span>
+  <h2>Measurable gains in the field</h2>
+  <ul class="clean">
+    <li>User satisfaction increased from 65% to 92%</li>
+    <li>Improved operator confidence and task efficiency</li>
+    <li>Deployed across 50+ robots in the UK and France</li>
+  </ul>
+  <a class="next" href="/projects/interactive-parts-system/">Next project →</a>
+</section>
+
+
+<!-- ===== CTA (mailto) ===== -->
+<section class="cta wrap">
+  <h2>Like how I think?</h2>
+  <p>I'm always curious to hear about challenging project, especially in manufacturing, energy efficiency and sustainability. Get in touch.</p>
+  <a class="btn" id="email-cta" href="mailto:solerelodie@gmail.com?subject=Hello">Email me</a>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="https://www.instagram.com/elodieso.design/">Instagram</a>
+    </div>
+    <div class="copy">Elodie Soler © 2026 · All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- PAGE END -->
+
+<!--
+  OPTIONAL — track the "Email me" click in GA4 (since you have no form,
+  this click IS your conversion). Paste once site-wide, e.g. via a code
+  snippet plugin. Requires gtag (GA4 / Site Kit) already loaded.
+
+  <script>
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact_click', { method: 'email', location: 'case_study' });
+        }
+      });
+    });
+  </script>
+-->
+
+</body>
+</html>

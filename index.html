@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 1. Consent Mode defaults: everything denied until the visitor chooses -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
+    security_storage:      localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: 'These help us understand how visitors interact with the website.',
+        defaultValue: false,
+        gtag: 'analytics_storage'
+      },
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: 'These are required for the website to work properly.',
+        required: true
+      }
+    ]
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+<title>Elodie Soler - Senior Product Designer</title>
+<meta name="description" content="Senior Product Designer in B2B SaaS and operational systems — connecting field research, commercial insight and AI-integrated practice.">
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="index-page">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero hero--centered wide">
+  <div class="eyebrow rise d1">
+    <span class="tag">Senior Product Designer</span>
+  </div>
+  <h1 class="rise d2">Designing systems people depend on</h1>
+  <p class="lede rise d3">Senior Product Designer in B2B SaaS and operational systems.<br>Bringing field research, commercial insight and AI-integrated practice.</p>
+</header>
+
+<!-- <div class="wide" style="padding-top:24px;"><hr class="divider"></div> -->
+
+<!-- ===== SELECTED WORK ===== -->
+<section class="section wide" id="work">
+  <span class="kicker">Selected work</span>
+  <h2>Projects</h2>
+ <!-- <p class="sub">B2B SaaS, robotics operations and feasibility studies.</p>-->
+
+  <div class="work-grid">
+    <a class="card" href="/projects/robot-control-interface/">
+      <div class="thumb"><img src="/images/projects/robot-control-interface/cover.jpg" alt="Remote Robot Controller"></div>
+      <div class="body">
+        <span class="cat">B2B · Robotics Operations</span>
+        <h3>Remote Robot Controller <span class="arr">↗</span></h3>
+      </div>
+    </a>
+
+    <a class="card" href="/projects/interactive-parts-system/">
+      <div class="thumb"><img src="/images/projects/interactive-parts-system/cover.png" alt="Interactive Parts System"></div>
+      <div class="body">
+        <span class="cat">B2B · Operations</span>
+        <h3>Interactive Parts System <span class="arr">↗</span></h3>
+      </div>
+    </a>
+
+    <a class="card" href="/projects/home-retrofit-assessment-platform/">
+      <div class="thumb"><img src="/images/projects/home-retrofit-assessment-platform/cover.png" alt="Home Retrofit Assessment Platform"></div>
+      <div class="body">
+        <span class="cat">B2C · Feasibility Study</span>
+        <h3>Home Retrofit Assessment Platform <span class="arr">↗</span></h3>
+      </div>
+    </a>
+
+    <a class="card" href="/projects/quality-and-compliance-system/">
+      <div class="thumb"><img src="/images/projects/quality-and-compliance-system/cover.png" alt="Compliance Management System"></div>
+      <div class="body">
+        <span class="cat">B2B · SaaS</span>
+        <h3>Compliance Management System <span class="arr">↗</span></h3>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== HOW I WORK (dark feature band — drawn from real About content) ===== -->
+<section class="band">
+  <div class="wide">
+    <span class="kicker">How I work</span>
+    <h2>Design that's accountable to the business</h2>
+    <p class="sub">I work across the line between design, build and commercial reality, close to the problem and close to the people who pay for the result.</p>
+
+    <div class="cap-grid">
+      <div class="cap">
+        <span class="num">01</span>
+        <h3>Product &amp; systems thinking</h3>
+        <p>I work on projects on multiple levels, from information architecture to service blueprint, so the product holds up under real conditions.</p>
+      </div>
+      <div class="cap">
+        <span class="num">02</span>
+        <h3>I build what I design</h3>
+        <p>Self-taught in HTML, CSS and AI-assisted development, I can prototype and test ideas early - without utilising precious resources.</p>
+      </div>
+      <div class="cap">
+        <span class="num">03</span>
+        <h3>Connected to revenue</h3>
+        <p>Getting closer to the commercial side sharpened how I work: I tie design decisions to commercial outcomes, and measure their impact.</p>
+      </div>
+      <div class="cap">
+        <span class="num">04</span>
+        <h3>Moving toward AI-native</h3>
+        <p>I integrate insights on how people interact with and prompt AI-integrated systems, into my own work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT SNIPPET (real bio, no contested year figure) ===== -->
+<section class="section wide">
+  <div class="about">
+    <div>
+      <span class="kicker">About me</span>
+      <h2>Started with a pencil. Still haven't stopped.</h2>
+      <p>I've been drawing since I was 7. That instinct to make things, not just imagine them, is what led me to industrial design, and then to designing B2B systems: from a robot control interface to field-operation platforms to compliance systems.</p>
+      <p><a href="/about">More about me →</a></p>
+    </div>
+    <figure class="about-img">
+      <img src="/images/home/about-sketch.jpg" alt="Hand-drawn sketch exploring AI capabilities in product work">
+      <figcaption>Sketching out loud, thinking through AI capabilities on paper.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta wide">
+  <h2>Like how I think?</h2>
+   <p>I'm always curious to hear about challenging project, especially in manufacturing, energy efficiency and sustainability. Get in touch.</p>
+  <a class="btn" id="email-cta" href="mailto:solerelodie@gmail.com?subject=Hello%20from%20your%20portfolio">Email me</a>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="https://www.instagram.com/elodieso.design/">Instagram</a>
+    </div>
+    <div class="copy">Elodie Soler © 2026 · All rights reserved.</div>
+  </div>
+</footer>
+
+<!--
+  OPTIONAL — track the "Email me" / "Get in touch" clicks in GA4 (since there's
+  no form, these clicks ARE your conversion). Paste once site-wide via a code
+  snippet plugin. Requires gtag (GA4 / Site Kit) already loaded.
+
+  <script>
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact_click', { method: 'email', location: 'homepage' });
+        }
+      });
+    });
+  </script>
+-->
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* =====================================================================
+   Elodie Soler — shared site styles
+   ===================================================================== */
+
+/* ---------- self-hosted fonts (variable) ---------- */
+@font-face{
+  font-family:"Lora";
+  src:url("/fonts/Lora-Variable.ttf") format("truetype");
+  font-weight:400 700; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:"Lora";
+  src:url("/fonts/Lora-Italic-Variable.ttf") format("truetype");
+  font-weight:400 700; font-style:italic; font-display:swap;
+}
+@font-face{
+  font-family:"Hanken Grotesk";
+  src:url("/fonts/HankenGrotesk-Variable.ttf") format("truetype");
+  font-weight:100 900; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:"Hanken Grotesk";
+  src:url("/fonts/HankenGrotesk-Italic-Variable.ttf") format("truetype");
+  font-weight:100 900; font-style:italic; font-display:swap;
+}
+
+/* ---------- design tokens ---------- */
+:root{
+  --bg:          #fbf8fa;  /* page background — soft warm mauve-white */
+  --surface:     #ffffff;  /* cards, raised surfaces */
+  --surface-alt: #f3eef4;  /* soft panel / section bands */
+  --ink:         #29262f;  /* primary text */
+  --ink-soft:    #5a5566;  /* secondary text, labels */
+  --ink-faint:   #847f8d;  /* captions, dates, rules */
+  --line:        #e7e1e8;  /* hairlines, borders */
+  --accent:      #5338c9;  /* links, primary buttons — or #6233c4 */
+  --accent-deep: #36258f;  /* hover / pressed / emphasis */
+  --accent-soft: #cabdf0;  /* decorative rules, dividers, illustration */
+  --accent-tint: #ece7fb;  /* very light wash — badge/callout backgrounds */
+  --accent-ring: rgba(83, 56, 201, 0.40); /* focus ring */
+
+  --radius:14px;
+  --radius-sm:10px;
+  --maxw:760px;            /* reading width */
+  --maxw-wide:1060px;      /* image / banner width */
+  --shadow:0 18px 40px -24px rgba(60,48,90,.35);
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:clamp(16px,1.05vw,17.5px);line-height:1.72;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Lora",Georgia,serif;font-weight:600;color:var(--ink);line-height:1.18;letter-spacing:-.01em;}
+a{color:var(--accent-deep);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* ---------- layout helper ---------- */
+.wide{max-width:var(--maxw-wide);margin-inline:auto;padding-inline:24px;}
+
+/* ---------- tag pill ---------- */
+.tag{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);
+     background:var(--accent-tint);border:1px solid var(--accent-soft);padding:5px 12px;border-radius:999px;font-weight:600;}
+.tag-alt {font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0px;}
+
+/* ---------- eyebrow (hero tag row) ---------- */
+.eyebrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+
+/* ---------- section kicker ---------- */
+.kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+
+/* ---------- primary button ---------- */
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;font-size:16px;
+     padding:14px 28px;border-radius:999px;border:1px solid var(--accent);transition:transform .15s ease,background .15s ease;}
+.btn:hover{background:var(--accent-deep);text-decoration:none;transform:translateY(-2px);}
+
+/* ---------- top nav ---------- */
+.nav{max-width:var(--maxw-wide);margin:0 auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;}
+.nav .brand{font-family:"Lora",serif;font-weight:600;font-size:19px;letter-spacing:-.01em;color:var(--ink);margin-left:0;}
+.nav .brand:hover{text-decoration:none;}
+.nav .links a{color:var(--ink-soft);font-size:15px;margin-left:22px;}
+.nav .links a:hover{color:var(--accent);text-decoration:none;}
+
+/* ---------- staggered entrance ---------- */
+.rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+@keyframes rise{to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none;}}
+
+/* ---------- hero ---------- */
+  .hero{padding:48px 24px 8px;}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,3.6rem);margin:0 0 20px;max-width:20ch;}
+  .hero .lede{font-size:clamp(1.15rem,2.1vw,1.45rem);line-height:1.45;color:var(--ink);
+              font-family:"Lora",serif;font-style:italic;font-weight:500;max-width:60ch;margin:0;}
+
+/* ---------- hero centered ---------- */
+  .index-page .hero, 
+  .about-page .hero {padding:64px 24px 12px;display:flex; flex-direction:column;align-items:center;text-align:center;}
+  .about-page .bio {display:flex; flex-direction:column;align-items:center;text-align:center;}
+
+/* ---------- section generic ---------- */
+  .section{padding-block:46px;}
+  .section h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 6px;}
+  .section .sub{color:var(--ink-soft);max-width:60ch;margin:0 0 28px;}
+  .divider{height:1px;background:var(--line);border:0;max-width:var(--maxw-wide);margin:8px auto;}
+
+/* ---------- case study page - sections ---------- */
+  .case-study-page section{padding:30px 0;}
+  .case-study-page section h2{font-size:clamp(1.45rem,2.6vw,1.9rem);margin:0 0 8px;}
+  .case-study-page section h2 + p, .kicker + h2{margin-top:0;}
+  .case-study-page p{margin:0 0 18px;}
+  .case-study-page ul.clean{list-style:none;padding:0;margin:0 0 18px;}
+  .case-study-page ul.clean li{position:relative;padding-left:26px;margin-bottom:10px;}
+  .case-study-page ul.clean li::before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:50%;
+                      background:var(--accent-soft);border:1.5px solid var(--accent);}
+   .case-study-page .divider{height:1px;background:var(--line);border:0;max-width:var(--maxw);margin:8px auto;}
+
+  /* ---------- case study page - hero image ---------- */
+  .case-study-page figure{margin:0;}
+  .case-study-page .figure{margin:34px auto;}
+  .case-study-page .figure img{width:100%;height:auto;display:block;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface-warm);}
+  .case-study-page .figure figcaption{font-size:14px;color:var(--ink-faint);margin-top:10px;text-align:center;font-style:italic;}
+  .case-study-page .img-placeholder{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;
+    border-radius:var(--radius);border:2px dashed var(--accent-soft);background:var(--accent-tint);color:var(--accent-deep);
+    font-weight:600;padding:24px;}
+
+  /* ---------- case study page - meta strip ---------- */
+  .case-study-page .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+        border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:8px 0 4px;}
+  .case-study-page .meta div{background:var(--bg);padding:18px 20px;}
+  .case-study-page .meta dt{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-bottom:4px;}
+  .case-study-page .meta dd{margin:0;font-size:15.5px;color:var(--ink);}
+
+  /* ---------- case study page - metrics band ---------- */
+  .case-study-page .metrics{background:var(--accent-tint);border:1px solid var(--accent-soft);border-radius:var(--radius);
+           padding:30px 24px;margin:6px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;text-align:center;}
+  .case-study-page .metric .num{font-family:"Lora",serif;font-weight:600;font-size:clamp(2.1rem,4vw,2.9rem);color:var(--accent-deep);line-height:1;}
+  .case-study-page .metric .lbl{font-size:14.5px;color:var(--ink-soft);margin-top:8px;}
+  .case-study-page .pill-replace{display:inline-block;font-family:"Hanken Grotesk",sans-serif;font-size:11px;font-weight:700;letter-spacing:.05em;
+                text-transform:uppercase;color:#fff;background:var(--accent);border-radius:6px;padding:2px 7px;vertical-align:middle;margin-left:6px;}
+
+  /* ---------- case study page - pull-quote ---------- */
+  .case-study-page blockquote{margin:24px 0;padding:18px 24px;border-left:3px solid var(--accent);background:var(--surface-warm);
+             border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-family:"Lora",serif;font-style:italic;font-size:1.12rem;color:var(--ink);}
+  .case-study-page blockquote cite{display:block;font-style:normal;font-family:"Hanken Grotesk",sans-serif;font-size:14px;color:var(--ink-faint);margin-top:8px;}
+
+  /* ---------- case study page - image pair grid ---------- */
+  .case-study-page .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:24px 0;}
+  .case-study-page .grid2 .figure{margin:0;}
+
+  /* ---------- case study page - highlight callout ---------- */
+  .case-study-page .callout{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:24px 0;box-shadow:var(--shadow);}
+  .case-study-page .callout .kicker{color:var(--accent-deep);}
+  .case-study-page .callout .p {margin:0;}
+
+/* ---------- index page - work grid ---------- */
+  .index-page .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px; padding-top: 22px;}
+  .index-page .card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+        overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;}
+  .index-page .card:hover{text-decoration:none;transform:translateY(-4px);box-shadow:0 26px 50px -26px rgba(60,48,90,.45);}
+  .index-page .card .thumb{aspect-ratio:4/3;overflow:hidden;background:var(--surface-warm);}
+  .index-page .card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
+  .index-page .card:hover .thumb img{transform:scale(1.04);}
+  .index-page .card .body{padding:18px 22px 22px;}
+  .index-page .card .cat{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700;}
+  .index-page .card h3{font-size:1.3rem;margin:6px 0 0;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .index-page .card h3 .arr{color:var(--accent);font-weight:400;transition:transform .2s ease;}
+  .index-page .card:hover h3 .arr{transform:translate(3px,-3px);}
+
+  /* ---------- index page - how I work ---------- */
+  .index-page .band{position:relative;background:var(--ink);color:#f4efe7;padding:66px 0 72px;margin:30px 0;overflow:hidden;}
+  .index-page .band::before{content:"";position:absolute;inset:0;background:
+      radial-gradient(900px 360px at 12% -10%, rgba(50,128,236,.22), transparent 60%),
+      radial-gradient(700px 320px at 100% 120%, rgba(50,128,236,.16), transparent 55%);
+      pointer-events:none;}
+  .index-page .band > .wide{position:relative;}
+  .index-page .band .kicker{color:var(--accent-soft);}
+  .index-page .band h2{color:#fbf7f0;}
+  .index-page .band .sub{color:rgba(244,239,231,.66);}
+  .index-page .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .index-page .cap{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);border-radius:var(--radius);
+       padding:26px 26px 28px;transition:transform .2s ease,background .2s ease,border-color .2s ease;}
+  .index-page .cap:hover{transform:translateY(-4px);background:rgba(50,128,236,.12);border-color:var(--accent);}
+  .index-page .cap .num{font-family:"Lora",serif;font-size:14px;color:var(--accent-soft);font-weight:600;letter-spacing:.04em;}
+  .index-page .cap h3{font-size:1.18rem;margin:6px 0 8px;color:#fbf7f0;}
+  .index-page .cap p{margin:0;color:rgba(244,239,231,.74);font-size:15.5px;line-height:1.6;}
+
+  /* ---------- index page - about preview ---------- */
+  .index-page .about{display:grid;grid-template-columns:1.25fr .85fr;gap:40px;align-items:center;}
+  .index-page .about h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin:0 0 16px;}
+  .index-page .about p{margin:0 0 16px;color:var(--ink);}
+  .index-page .about .about-img{margin:0;}
+  .index-page .about .about-img img{width:100%;height:auto;display:block;border-radius:var(--radius);
+        border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface-alt);}
+  .about .about-img figcaption{font-size:13.5px;color:var(--ink-faint);margin-top:10px;font-style:italic;text-align:center;}
+
+  /* ---------- about page - bio ---------- */
+  .about-page .bio p{margin:0 0 20px;font-size:clamp(1.05rem,1.4vw,1.2rem);}
+  .about-page .bio strong{font-weight:700;}
+
+  /* ---------- about page - toolkit ---------- */
+  .about-page .toolkit{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .about-page .tk{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px;box-shadow:var(--shadow);}
+  .about-page .tk .tk-h{font-family:"Lora",serif;font-weight:600;font-size:1.15rem;color:var(--ink);margin:0 0 12px;display:flex;align-items:center;gap:9px;}
+  .about-page .tk .tk-h::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent-soft);border:1.5px solid var(--accent);flex:none;}
+  .about-page .tk ul{list-style:none;margin:0;padding:0;}
+  .about-page .tk li{font-size:15px;color:var(--ink-soft);padding:6px 0;border-top:1px solid var(--line);}
+  .about-page .tk li:first-child{border-top:0;}
+
+  /* ---------- about page - sketching band (light) ---------- */
+  .about-page .sketch-intro{max-width:var(--maxw);margin-inline:auto;padding-inline:24px;}
+  .about-page .sketch-intro blockquote{margin:18px 0 0;padding:20px 26px;border-left:3px solid var(--accent);background:var(--surface-warm);
+        border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-family:"Lora",serif;font-style:italic;font-size:1.12rem;color:var(--ink);line-height:1.5;}
+  .about-page .sketch-intro blockquote p{margin:0 0 12px;}
+  .about-page .sketch-intro blockquote p:last-child{margin:0;}
+
+  /* ---------- about page - sketch gallery — masonry */
+  .about-page .gallery{columns:3;column-gap:18px;margin-top:30px;}
+  .about-page .gallery figure{margin:0 0 18px;break-inside:avoid;}
+  .about-page .gallery img{width:100%;height:auto;display:block;border-radius:var(--radius-sm);border:1px solid var(--line);
+        box-shadow:var(--shadow);background:var(--surface-warm);}
+
+  /* ---------- about page - image pair grid */
+  .about-page .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:24px 0;}
+  .about-page .grid2 .figure{margin:0;}
+
+    /* ---------- reading width ---------- */
+  .wrap {max-width:var(--maxw);margin-inline:auto;padding-inline:24px;}
+
+  /* ---------- CTA ---------- */
+  .cta{text-align:center;padding:60px 24px 24px;}
+  .cta h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin:0 0 12px;}
+  .cta p{color:var(--ink-soft);max-width:50ch;margin:0 auto 26px;}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#f4efe7;margin-top:48px;padding:36px 0 50px;}
+.foot{max-width:var(--maxw-wide);margin:0 auto;padding-inline:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}
+.foot .links a{color:rgba(244,239,231,.85);margin-left:18px;font-size:15px;}
+.foot .links a:first-child{margin-left:0;}
+.foot .links a:hover{color:var(--accent-soft);text-decoration:none;}
+.foot .copy{width:100%;color:rgba(244,239,231,.6);font-size:13.5px;margin-top:8px;}
+@media (max-width:560px){
+  .foot{justify-content:flex-start;}
+  .foot .links{width:100%;}
+  .foot .links a:first-child{margin-left:0;}
+}
+
+  /* ---------- responsive - index page ---------- */
+  @media (max-width:760px){
+    .index-page .work-grid{grid-template-columns:1fr;}
+    .index-page .cap-grid{grid-template-columns:1fr;}
+    .index-page .about{grid-template-columns:1fr;gap:28px;}
+    .index-page .about .about-img{order:-1;}
+  }
+
+    /* ---------- responsive - about page ---------- */
+  @media (max-width:900px){
+    .about-page .toolkit{grid-template-columns:1fr;}
+    .about-page .gallery{columns:2;}
+  }
+  @media (max-width:560px){
+    .about-page .gallery{columns:1;}
+  }
+
+  /* ===== Consent banner — Iris theme ===== */
+#stcm-wrapper {
+  --primaryColor: #5338c9;                       /* Iris — buttons, links, toggles */
+  --backgroundColor: #ffffff;                    /* banner surface */
+  --textColor: #2b2433;                          /* body text — dark mauve-charcoal */
+  --fontFamily: 'Hanken Grotesk', sans-serif;
+  --iconColor: #5338c9;                          /* reopen-icon circle */
+  --iconBackgroundColor: #ffffff;                /* the cookie glyph inside it */
+}
+
+/* Focus ring: Silktide hardcodes a white outer ring, invisible on a light
+   banner — replace it with Iris so keyboard focus stays visible */
+#stcm-wrapper a:focus,
+#stcm-wrapper #stcm-banner button:focus,
+#stcm-wrapper #stcm-modal button:focus,
+#stcm-wrapper #stcm-icon:focus {
+  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #5338c9;
+}
