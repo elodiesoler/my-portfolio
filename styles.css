@@ -110,7 +110,7 @@ a:hover{text-decoration:underline;}
   .divider{height:1px;background:var(--line);border:0;max-width:var(--maxw-wide);margin:8px auto;}
 
 /* ---------- case study page - sections ---------- */
-  .case-study-page section{padding:30px 0;}
+  .case-study-page section{padding-block: 30px;}
   .case-study-page section h2{font-size:clamp(1.45rem,2.6vw,1.9rem);margin:0 0 8px;}
   .case-study-page section h2 + p, .kicker + h2{margin-top:0;}
   .case-study-page p{margin:0 0 18px;}
