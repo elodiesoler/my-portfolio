@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- 1. Consent Mode defaults: everything denied until the visitor chooses -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
+    security_storage:      localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: 'These help us understand how visitors interact with the website.',
+        defaultValue: false,
+        gtag: 'analytics_storage'
+      },
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: 'These are required for the website to work properly.',
+        required: true
+      }
+    ]
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+<title>Privacy Policy - Elodie Soler</title>
+<meta name="description" content="How this website handles your data: analytics only with your consent, no ads, no marketing cookies, no data sales.">
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="privacy-page">
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero wide">
+  <h1 class="rise d2">Privacy Policy</h1>
+  <p class="lede rise d3">In short: this site collects no analytics data unless you accept it in the cookie banner. No ads, no marketing cookies, no forms, and your data is never sold.</p>
+</header>
+
+<!-- ===== WHO I AM ===== -->
+<section class="section">
+  <div class="wrap bio">
+    <p>Last updated: 11/06/2026</p>
+    <p>This is the portfolio website of Elodie Soler ("I", "me"). I'm the data controller for any personal data processed through this site. If you have any questions about this policy or your data, email me at <a href="mailto:solerelodie@gmail.com">solerelodie@gmail.com</a>.</p>
+  </div>
+</section>
+
+
+<!-- ===== ANALYTICS ===== -->
+<section class="wrap">
+  <span class="kicker">Analytics</span>
+  <h2>Only with your consent</h2>
+  <p>I use Google Analytics 4 (via Google Tag Manager) to understand which projects people find interesting. <strong>No analytics run and no analytics cookies are set unless you click Accept in the cookie banner.</strong> If you reject, nothing is collected — not even anonymised pings.</p>
+  <p>If you accept, the following is collected:</p>
+  <ul class="clean">
+    <li>Which pages you visit, and how far you scroll on project pages</li>
+    <li>Clicks on the "Email me" button</li>
+    <li>Your browser and device type</li>
+    <li>Your approximate location (country/city level), derived from your IP address — Google Analytics does not log or store the IP address itself</li>
+  </ul>
+  <p>The legal basis for this is your consent (UK GDPR, Article 6(1)(a)). You can withdraw it at any time using the cookie icon in the corner of the page — analytics stop immediately.</p>
+</section>
+
+
+<!-- ===== COOKIES & STORAGE ===== -->
+<section class="wrap">
+  <span class="kicker">Cookies &amp; storage</span>
+  <h2>What gets stored in your browser</h2>
+  <ul class="clean">
+    <li><strong>Consent preferences</strong> — your banner choice is saved in your browser's local storage (keys beginning <code>stcm.</code>) so you aren't asked on every page. This stays on your device and is removed if you clear your browsing data.</li>
+    <li><strong>Analytics cookies</strong> (<code>_ga</code> and <code>_ga_*</code>) — set only if you accept analytics. They distinguish visitors from one another and expire after 2 years at most. Rejecting or withdrawing consent prevents them being set.</li>
+  </ul>
+  <p>There are no advertising or marketing cookies on this site, and no session-recording tools.</p>
+</section>
+
+<!-- ===== HOSTING ===== -->
+<section class="wrap">
+  <span class="kicker">Hosting</span>
+  <h2>How the site is served</h2>
+  <p>This site is hosted on Cloudflare Pages. To deliver pages and protect against attacks, Cloudflare processes technical data such as your IP address as part of serving the site (legitimate interest). I don't use this to identify individual visitors.</p>
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+<section class="wrap">
+  <span class="kicker">Contact</span>
+  <h2>If you email me</h2>
+  <p>The "Email me" buttons open your own email app — there are no contact forms on this site. If you choose to email me, I'll receive your email address, name and message, and I'll use them only to reply to you. You won't be added to any mailing list.</p>
+</section>
+
+
+<!-- ===== RETENTION & TRANSFERS ===== -->
+<section class="wrap">
+  <span class="kicker">Retention &amp; transfers</span>
+  <h2>How long, and where</h2>
+  <p>Analytics event data is retained for 14 months and then deleted automatically. Google may process analytics data on servers outside the UK and EEA, including in the United States, under the EU–US Data Privacy Framework and its UK extension.</p>
+</section>
+
+
+<!-- ===== YOUR RIGHTS ===== -->
+<section class="wrap">
+  <span class="kicker">Your rights</span>
+  <h2>You stay in control</h2>
+  <p>Under UK GDPR you have the right to access, correct, delete or restrict the use of your personal data, to object to its processing, to data portability, and to withdraw consent at any time. To exercise any of these, email me at <a href="mailto:solerelodie@gmail.com">solerelodie@gmail.com</a>.</p>
+  <p>If you're unhappy with how I've handled your data, you can complain to the UK Information Commissioner's Office at <a href="https://ico.org.uk" rel="noopener">ico.org.uk</a>.</p>
+</section>
+
+
+<!-- ===== CHANGES ===== -->
+<section class="wrap">
+  <span class="kicker">Changes</span>
+  <h2>Updates to this policy</h2>
+  <p>If anything about how this site handles data changes, I'll update this page and revise the date at the top.</p>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+    <div class="copy">Elodie Soler © 2026 · All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
