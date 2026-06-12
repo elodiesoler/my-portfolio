@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Check each URL in your browser first: if the address bar adds or
+     removes a trailing slash, edit the line here to match the final form. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://elodiesoler.com/</loc></url>
+  <url><loc>https://elodiesoler.com/about/</loc></url>
+  <url><loc>https://elodiesoler.com/projects/robot-control-interface/</loc></url>
+  <url><loc>https://elodiesoler.com/projects/interactive-parts-system/</loc></url>
+  <url><loc>https://elodiesoler.com/projects/home-retrofit-assessment-platform/</loc></url>
+  <url><loc>https://elodiesoler.com/projects/quality-and-compliance-system/</loc></url>
+  <url><loc>https://elodiesoler.com/privacy/</loc></url>
+</urlset>
