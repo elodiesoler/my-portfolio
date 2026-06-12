@@ -85,7 +85,7 @@ a:hover{text-decoration:underline;}
 .nav .links a:hover{color:var(--accent);text-decoration:none;}
 
 /* ---------- 404 page ---------- */
- .page-404 body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+ .page-404 {margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
        background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;
        text-align:center;padding:24px;}
   .page-404 main{max-width:520px;}
