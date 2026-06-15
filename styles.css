@@ -26,14 +26,14 @@
 
 /* ---------- design tokens ---------- */
 :root{
-  --bg:          #fbf8fa;  /* page background — soft warm mauve-white */
+  --bg:          #fbf8fa;  /* page background */
   --surface:     #ffffff;  /* cards, raised surfaces */
   --surface-alt: #f3eef4;  /* soft panel / section bands */
   --ink:         #29262f;  /* primary text */
   --ink-soft:    #5a5566;  /* secondary text, labels */
   --ink-faint:   #847f8d;  /* captions, dates, rules */
   --line:        #e7e1e8;  /* hairlines, borders */
-  --accent:      #5338c9;  /* links, primary buttons — or #6233c4 */
+  --accent:      #5338c9;  /* links, primary buttons */
   --accent-deep: #36258f;  /* hover / pressed / emphasis */
   --accent-soft: #cabdf0;  /* decorative rules, dividers, illustration */
   --accent-tint: #ece7fb;  /* very light wash — badge/callout backgrounds */
