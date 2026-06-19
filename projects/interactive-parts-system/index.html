@@ -166,6 +166,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="kicker">Process</span>
   <h2>Learning from outside the industry</h2>
   <p>I researched how others solve this for non-experts: IKEA guides, CAD tools. The insight that shaped everything: visual, step-revealed instruction beats dense reference mid-task.</p>
+  
+<div class="wide">
+  <div class="grid2">
+    <figure class="figure"><img src="/images/projects/interactive-parts-system/IKEA-example.jpg" alt="IKEA exploded diagram">
+    <figcaption>Show one step at a time.<br>(IKEA assembly instructions)</figcaption></figure>
+    <figure class="figure"><img src="/images/projects/interactive-parts-system/CAD-Exchanger.png" alt="Screenshot from CAD Exchanger Lab">
+    <figcaption>Isolate any single part on demand.<br>(CAD Exchanger Lab)</figcaption></figure>
+  </div>
+</div>
+
   <p>I mapped the full onsite equipment ecosystem to ensure any solution would scale beyond the spray nozzle. Then, we ran a value/cost prioritisation exercise to focus development on high-impact, low-complexity features first.</p>
   <p>We deprioritised visual maintenance walkthroughs due to high effort to produce and low impact on resolving faults, and focused first on shipping part-ID search.</p>
 </section>
@@ -185,13 +195,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>An interactive parts diagram system</h2>
   <div class="callout">
     <span class="kicker">The key design move</span>
-    <p style="margin:0;">Rather than building a full 3D viewer, which would have required complex API integration, I simplified navigation to 3 fixed perspective views (front, bottom, top), keeping all components visible within Flutter's constraints. The constraint actually improved usability: fixed views are faster to navigate than free rotation for task-focused assembly work. Because the guidance is visual rather than written, it works regardless of the user's first language. It was a deliberate choice that let installers across the team use it equally well.</p>
+    <p style="margin:0;">A 3D viewer would have meant complex API integration, so I used three fixed views instead. The constraint turned out to make the tool faster to use.</p>
   </div>
+  <p>I simplified navigation to three fixed perspective views - front, bottom and top - keeping every component visible within Flutter's constraints. For task-focused assembly work, fixed views are quicker to navigate than free rotation: the user isn't manipulating a model, they're finding a part. And because the guidance is visual rather than written, it works regardless of the user's first language, so installers across the team could use it equally well.</p>
 </section>
 
 <div class="wide">
   <figure class="figure-single">
-    <img src="/images/projects/interactive-parts-system/app-3.png" alt="Interactive parts app — search view">
+    <img src="/images/projects/interactive-parts-system/app-1.png" alt="Interactive parts app — search view">
     <figcaption>Tap a part to access its ID and assembly order. Tap to add it to the cart.</figcaption>
 </figure>
 </div>
