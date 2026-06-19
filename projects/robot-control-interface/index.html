@@ -82,7 +82,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="eyebrow rise d1">
     <span class="tag">B2B</span>
     <span class="tag">Robotics operations</span>
-    <span class="tag">Interface redesign</span>
+    <span class="tag">Complex flow redesign</span>
   </div>
   <h1 class="rise d2">Robot Control Interface for High Constraints Environment</h1>
   <p class="lede rise d3">Improving how installers operate robotics systems in constrained environments by simplifying controls and increasing real-time visibility.</p>
@@ -97,9 +97,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== META STRIP ===== -->
 <div class="wrap">
   <dl class="meta">
-    <div><dt>My role</dt><dd>Product Designer / Product Lead (end-to-end ownership)</dd></div>
-    <div><dt>Type</dt><dd>Interface redesign</dd></div>
+    <div><dt>My role</dt><dd>Product Designer / End-to-end ownership</dd></div>
+    <div><dt>Type</dt><dd>Complex flow redesign (constrained, real-time operation)</dd></div>
     <div><dt>Domain</dt><dd>Q-Bot underfloor insulation / Robotics</dd></div>
+    
   </dl>
 </div>
 
@@ -121,13 +122,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="wrap">
   <span class="kicker">Context</span>
   <h2>Usability under real operational constraints</h2>
-  <p>The interface is used by installers to operate robotics systems in constrained, low-visibility environments during underfloor insulation installations.</p>
-  <p>In this setting, usability directly impacts:</p>
-  <ul class="clean">
-    <li>Risk of operational errors</li>
-    <li>Speed and precision of execution</li>
-    <li>Operator confidence</li>
-  </ul>
+  <p>After six generations of incremental changes, Q-Bot's robot control interface had become increasingly difficult to evolve. A platform migration provided the opportunity to rethink the experience from the ground up.</p>
+  <p>The challenge was to design for installers operating robots in confined spaces with limited visibility, where every interaction affects speed, accuracy, and confidence. I led the redesign end-to-end, partnering with engineers and field operators to create a system that is still used today across 50+ robots in the UK and France.</p>
 </section>
 
 <hr class="divider">
@@ -136,26 +132,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="wrap">
   <span class="kicker">Challenge</span>
   <h2>Friction in critical workflows</h2>
-  <p>The existing interface created friction in critical workflows:</p>
-  <ul class="clean">
-    <li>Cluttered navigation increased cognitive load</li>
-    <li>Small camera feed limited visibility in already constrained environments</li>
-    <li>Interaction model required switching between multiple input devices, slowing down task execution</li>
-  </ul>
-  <p>These issues reduced efficiency and increased the likelihood of errors during installation.</p>
+  <p>Operators were already working in a challenging physical environment. The interface compounded that challenge with fragmented workflows, limited visibility, and unnecessary interactions, making critical tasks slower and more error-prone.</p>
 </section>
 
 <hr class="divider">
 
 <!-- ===== APPROACH ===== -->
 <section class="wrap">
-  <span class="kicker">Approach</span>
-  <h2>Designing around real operation</h2>
-  <p>I worked closely with engineers and installers to understand how the interface supported real-world operation. Through interviews and on-site shadowing, we identified a key mismatch between:</p>
-  <ul class="clean">
-    <li>How the system was structured</li>
-    <li>How operators needed to interact with it in practice</li>
-  </ul>
+  <span class="kicker">Process</span>
+  <h2>Shadowed real installs</h2>
+  <p>Interviews and on-site observations showed that operators had to adapt to the software, rather than the software supporting the way they worked.</p>
 </section>
 
 <div class="wide">
@@ -166,13 +152,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section class="wrap">
-  <p>The redesign focused on:</p>
-  <ul class="clean">
-    <li>Reducing interaction cost for high-frequency actions</li>
-    <li>Improving visibility and space awareness</li>
-    <li>Aligning the interface with a more fluid, single-input interaction model</li>
-  </ul>
+  <!-- <h2>Mapped interaction cost</h2> -->
+  <p>I broke down the most common tasks to understand the effort involved, from extra steps to switching devices and dividing attention. This gave us a clear, evidence-based roadmap for the redesign.</p>
 </section>
+
+<div class="wide">
+  <figure class="figure-single">
+    <img src="/images/projects/robot-control-interface/mk7-mapping-1.jpg" alt="Process screenshot — interface mapping (1)">
+ </figure>
+</div>
 
 <hr class="divider">
 
@@ -196,10 +184,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <div class="wide">
-  <div class="grid2">
-    <figure class="figure"><img src="/images/projects/robot-control-interface/mk7-mapping-1.jpg" alt="Process screenshot — interface mapping (1)"></figure>
-    <figure class="figure"><img src="/images/projects/robot-control-interface/mk7-mapping-2.jpg" alt="Process screenshot — interface mapping (2)"></figure>
-  </div>
+  <figure class="figure-single">
+    <img src="/images/projects/robot-control-interface/mk7-mapping-2.jpg" alt="Process screenshot — interface mapping (2)">
+ </figure>
+</div>
+
+<div class="wide">
   <div class="grid2">
   <figure class="figure"><img src="/images/projects/robot-control-interface/gui-latest-screen.jpg" alt="Latest interface design — main control screen"></figure>
   <figure class="figure"><img src="/images/projects/robot-control-interface/gui-nav-bar.jpg" alt="Design system for navigation menu"></figure>
@@ -240,8 +230,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="kicker">Outcome</span>
   <h2>Measurable gains in the field</h2>
   <ul class="clean">
+    <li>Installers reported faster command input and switching (observed in the field, not formally measured)</li>
     <li>User satisfaction increased from 65% to 92%</li>
-    <li>Improved operator confidence and task efficiency</li>
     <li>Deployed across 50+ robots in the UK and France</li>
   </ul>
   <a class="next" href="/projects/interactive-parts-system/">Next project →</a>
