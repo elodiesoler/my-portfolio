@@ -107,8 +107,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="wrap">
   <div class="metrics">
     <div class="metric">
-      <div class="num">50%</div>
-      <div class="lbl">reduction in time to access critical information</div>
+      <div class="num">4→1</div>
+      <div class="lbl">steps to reach a property page, via CRM deep-linking</div>
     </div>
   </div>
 </div> 
@@ -133,14 +133,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="wrap">
   <span class="kicker">Challenge</span>
   <h2>Structure out of step with real use</h2>
-  <p>The platform had evolved without a clear information architecture or design system, creating a growing disconnect between how the system was structured and how users needed to operate in practice. This resulted in:</p>
+  <p>The platform had evolved around the product's underlying structure rather than the way people worked. Technicians in the field and project managers coordinating surveys were funnelled through the same screens, navigating around features they didn't need to reach the information they did.</p>
+  <p>As the product grew, that disconnect became increasingly costly:</p>
   <ul class="clean">
-    <li>Fragmented workflows requiring navigation across multiple screens</li>
-    <li>Poor visibility and access to critical information</li>
-    <li>Redundant features adding unnecessary complexity</li>
-    <li>Long loading times impacting operational efficiency</li>
+    <li>Workflows fragmented across multiple screens</li>
+    <li>Critical information buried behind unnecessary navigationn</li>
+    <li>Redundant features adding complexity for every user</li>
+    <li>Long loading times slowing day-to-day tasks</li>
   </ul>
-  <p>As the product scaled, these issues made the platform increasingly difficult to maintain, extend and use effectively in real-world operational contexts.</p>
+  <p>The result was a platform that became harder to use, maintain and extend as the business scaled.</p>
 </section>
 
 <div class="wide">
@@ -154,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== APPROACH ===== -->
 <section class="wrap">
-  <span class="kicker">Approach</span>
+  <span class="kicker">Process</span>
   <h2>Designing for two user groups</h2>
   <p>To support a shift in market positioning, I defined two primary user groups with distinct but overlapping needs:</p>
   <ul class="clean">
@@ -243,24 +244,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 
+<section class="wrap">
+  <h2>Instant access from the CRM</h2>
+  <p>Property pages couldn't be accessed directly. To open one, the team had to start from the homepage and search for the property every time. By introducing stable URLs, we made each property page linkable from the CRM the team already used, reducing access from four steps to one.</p>
+</section>
+
 <hr class="divider">
 
 <!-- ===== IMPACT ===== -->
 <section class="wrap">
   <span class="kicker">Outcome</span>
   <h2>A platform that scales</h2>
-  <p>The redesigned system improved how users navigate and interact with complex data sets:</p>
+  <p>The restructure changed how teams access and work with project data. The most visible improvement was in the highest-frequency task: opening a property from the CRM. What had previously required four steps could now be done in a single click through deep-linkable property URLs.</p>
   <ul class="clean">
-    <li>50% reduction in time to access critical information</li>
-    <li>Clearer mental models for navigating system workflows</li>
-    <li>Improved usability and accessibility across the platform</li>
-    <li>Reduced complexity, supporting more efficient ongoing development</li>
+    <li>High-frequency information was grouped for immediate access, reducing time spent searching across screens</li>
+    <li>Property and customer data were separated into a clearer hierarchy, reducing the risk of errors</li>
+    <li>Met WCAG AA contrast (AAA on key text) and clarified page navigation, improving legibility and accessibility</li>
+    <li>Property and customer data were separated into a clearer hierarchy, reducing the risk of errors</li>
   </ul>
-  <p>The platform is now deployed, supporting underfloor insulation projects at scale:</p>
-  <ul class="clean">
-    <li>Quicker and easier access to key data, making onsite operations smoother and reducing friction</li>
-    <li>Reduced software development costs for the business</li>
-  </ul>
+  <p>The platform is now deployed across distributed field teams, supporting underfloor insulation projects at scale.</p>
   <blockquote>
     The most interesting challenge was to create and integrate a new design system to scale the platform without redesigning it entirely.
     <cite>— Key takeaway</cite>
