@@ -151,13 +151,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section class="wrap">
-  <!-- <h2>Mapped interaction cost</h2> -->
-  <p>I broke down the most common tasks to understand the effort involved, from extra steps to switching devices and dividing attention. This gave us a clear, evidence-based roadmap for the redesign.</p>
+  <h2>Mapping the critical tasks</h2>
+  <p>I broke down the most frequent operator tasks to understand where time and effort were being lost. The friction came less from individual screens and more from moving between them: extra steps, device switching and divided attention.</p>
 </section>
 
 <div class="wide">
   <figure class="figure-single">
     <img src="/images/projects/robot-control-interface/mk7-mapping-1.jpg" alt="Process screenshot — interface mapping (1)">
+ </figure>
+</div>
+
+<section class="wrap">
+  <h2>Designing within ROS</h2>
+  <p>Working end-to-end meant designing within the constraints of the robotics platform.</p>
+  <p>For instance, we explored displaying foam thickness as a live overlay on the camera feed, but building and maintaining it within ROS would have required significant effort for uncertain value. Instead, I designed a simple thickness readout in the corner of the screen. In field use, it provided the information operators needed at a glance, without the complexity of a full visual overlay.</p>
+</section>
+
+<div class="wide">
+  <figure class="figure-single">
+    <img src="/images/projects/robot-control-interface/mk7-mapping-2.jpg" alt="Process screenshot — interface mapping (2)">
  </figure>
 </div>
 
@@ -181,12 +193,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Maximising the camera feed and moving to a single gamepad-inspired input, cutting interaction cost exactly where visibility and speed matter most.</p>
   </div>
 </section>
-
-<div class="wide">
-  <figure class="figure-single">
-    <img src="/images/projects/robot-control-interface/mk7-mapping-2.jpg" alt="Process screenshot — interface mapping (2)">
- </figure>
-</div>
 
 <div class="wide">
   <div class="grid2">
