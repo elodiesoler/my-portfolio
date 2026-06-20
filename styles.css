@@ -173,6 +173,9 @@ a:hover{text-decoration:underline;}
   .case-study-page .callout .kicker{color:var(--accent-deep);}
   .case-study-page .callout .p {margin:0;}
 
+  /* ---------- case study page - CTA aligned to the right ---------- */
+   /* .case-study-page .wrap .next {display:flex; justify-content:right;} */
+
 /* ---------- index page - work grid ---------- */
   .index-page .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px; padding-top: 22px;}
   .index-page .card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
