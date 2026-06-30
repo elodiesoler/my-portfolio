@@ -239,7 +239,7 @@ a:hover{text-decoration:underline;}
 
   /* ---------- about page - sketch gallery — masonry */
   .about-page .gallery{columns:3;column-gap:18px;margin-top:30px;}
-  .about-page .gallery figure{margin:0 0 18px;break-inside:avoid;}
+  .about-page .gallery figure{margin:0 0 18px;break-inside:avoid; object-fit: cover;}
   .about-page .gallery img{width:100%;height:auto;display:block;border-radius:var(--radius-sm);border:1px solid var(--line);
         box-shadow:var(--shadow);background:var(--surface-warm);}
 
