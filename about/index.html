@@ -62,7 +62,7 @@
         id: 'recordings',
         label: 'Session recordings',
         description: '<p>Opt-in session recordings and heatmaps (Microsoft Clarity) to see where the site confuses people.</p>',
-        defaultValue: true,
+        defaultValue: false,
         onReject: function () {
           if (window.clarity) { window.clarity('stop'); }
         }
