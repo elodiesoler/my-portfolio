@@ -46,7 +46,7 @@
       {
         id: 'analytics',
         label: 'Analytics',
-        description: '<p>We collect anonymous, aggregate statistics about how this site is used (pages viewed, how far people scroll) solely to improve it, via Google Analytics. This is on by default under UK law (PECR statistical purposes exception). You can switch it off here at any time and we will stop immediately.</p>',
+        description: '<p>Anonymous, aggregate usage statistics (Google Analytics) to improve this site. On by default under UK law; switch off any time.</p>',
         defaultValue: true,
         gtag: 'analytics_storage',
         onReject: function () {
@@ -60,8 +60,8 @@
       {
         id: 'recordings',
         label: 'Session recordings',
-        description: '<p>With your consent, we use Microsoft Clarity to record anonymised sessions and heatmaps so we can see where the site confuses people. Off unless you switch it on.</p>',
-        defaultValue: false,
+        description: '<p>Opt-in session recordings and heatmaps (Microsoft Clarity) to see where the site confuses people.</p>',
+        defaultValue: true,
         onReject: function () {
           if (window.clarity) { window.clarity('stop'); }
         }

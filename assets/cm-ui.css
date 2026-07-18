@@ -7,15 +7,13 @@
 -------------------------------- */
 /* Wrapper (Global) */
 #stcm-wrapper {
-  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #F9D000;
-  --backgroundColor: #050505;
-  --textColor: #F4F0DF;
-  --backdropBackgroundColor: #00000077;
-  --backdropBackgroundBlur: 0px;
-  --iconColor: #050505;
-  --iconBackgroundColor: #F9D000;
+  --fontFamily: 'Hanken Grotesk', sans-serif;
+  --primaryColor: #5338c9;                       /* Iris — buttons, links, toggles */
+  --backgroundColor: #ffffff;                    /* banner surface */
+  --textColor: #2b2433;                          /* body text — dark mauve-charcoal */
+  --fontFamily: 'Hanken Grotesk', sans-serif;
+  --iconColor: #5338c9;                          /* reopen-icon circle */
+  --iconBackgroundColor: #ffffff;                /* the cookie glyph inside it */
   position: fixed;
   bottom: 0;
   right: 0;
@@ -47,17 +45,13 @@ Links
 /* --------------------------------
 Focus Styles
 -------------------------------- */
+/* Focus ring: Silktide hardcodes a white outer ring, invisible on a light
+   banner — replace it with Iris so keyboard focus stays visible */
 #stcm-wrapper a:focus,
 #stcm-wrapper #stcm-banner button:focus,
 #stcm-wrapper #stcm-modal button:focus,
 #stcm-wrapper #stcm-icon:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #ffffff;
-  border-radius: 5px;
-}
-
-#stcm-wrapper #stcm-icon:focus {
-  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #5338c9;
 }
 
 /* --------------------------------
@@ -115,7 +109,6 @@ Banner
   opacity: 0;
   animation: stcm-slide-down 350ms ease-out;
   animation-delay: 0.3s;
-  box-shadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
 }
 
 #stcm-banner.stcm-loaded {
@@ -434,6 +427,7 @@ Modal - Footer
   flex-direction: column;
   gap: 16px;
   margin-top: 24px;
+  background: var(--backgroundColor);
 }
 
 @media (min-width: 600px) {
@@ -482,7 +476,7 @@ Modal - Footer
 }
 
 #stcm-icon svg {
-  fill: var(--iconBackgroundColor);
+  fill: var(--backgroundColor);
 }
 
 /* --------------------------------
@@ -495,8 +489,7 @@ Backdrop
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--backdropBackgroundColor);
-  backdrop-filter: blur(var(--backdropBackgroundBlur));
+  background-color: var(--backgroundColor);
   pointer-events: all;
 }
 
