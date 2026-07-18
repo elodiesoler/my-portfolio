@@ -11,7 +11,6 @@
   --primaryColor: #5338c9;                       /* Iris — buttons, links, toggles */
   --backgroundColor: #ffffff;                    /* banner surface */
   --textColor: #2b2433;                          /* body text — dark mauve-charcoal */
-  --fontFamily: 'Hanken Grotesk', sans-serif;
   --iconColor: #5338c9;                          /* reopen-icon circle */
   --iconBackgroundColor: #ffffff;                /* the cookie glyph inside it */
   position: fixed;
@@ -193,6 +192,7 @@ Banner
   width: 48px;
   height: 48px;
   text-decoration: none;
+  display: none;
 }
 
 #stcm-banner .stcm-actions {
@@ -222,6 +222,7 @@ Banner
 Modal
 -------------------------------- */
 #stcm-modal {
+  display: none;
   pointer-events: auto;
   overflow: auto;
   width: 800px;
@@ -342,7 +343,7 @@ Modal - Switches
 
 #stcm-modal .stcm-toggle:focus-within {
   outline: none;
-  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #ffffff;
+  box-shadow: 0 0 0 2px var(--backgroundColor), 0 0 0 4px #5338c9;
   border-radius: 25px;
 }
 
@@ -489,7 +490,7 @@ Backdrop
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--backgroundColor);
+  background-color: #00000077;
   pointer-events: all;
 }
 
