@@ -193,6 +193,7 @@ Banner
   width: 48px;
   height: 48px;
   text-decoration: none;
+  display: none;
 }
 
 #stcm-banner .stcm-actions {
@@ -444,6 +445,7 @@ Modal - Footer
 
 #stcm-modal footer a.stcm-credit-link {
   text-decoration: none;
+  display: none;
 }
 
 #stcm-modal footer a.stcm-credit-link:hover {
