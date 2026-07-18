@@ -188,12 +188,11 @@ Banner
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: var(--primaryColor); /* passed down to svg > path */
+  fill: #fff; /* passed down to svg > path */
   margin-left: auto;
   width: 48px;
   height: 48px;
   text-decoration: none;
-  display: none;
 }
 
 #stcm-banner .stcm-actions {
@@ -223,7 +222,6 @@ Banner
 Modal
 -------------------------------- */
 #stcm-modal {
-  display: none;
   pointer-events: auto;
   overflow: auto;
   width: 800px;
