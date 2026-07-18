@@ -4,17 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- 1. Consent Mode defaults: everything denied until the visitor chooses -->
+<!-- 1. Consent Mode defaults — opt-out model under PECR statistical purposes exception -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('consent', 'default', {
-    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
-    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    functionality_storage: localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied',
-    security_storage:      localStorage.getItem('stcm.consent.essential') === 'true' ? 'granted' : 'denied'
+    // Granted unless the visitor has explicitly objected (DUAA opt-out)
+    analytics_storage: localStorage.getItem('stcm.consent.analytics') === 'false' ? 'denied' : 'granted',
+
+    // No advertising on this site — never granted
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+
+    // Essential is required and cannot be rejected
+    functionality_storage: 'granted',
+    security_storage: 'granted'
   });
 </script>
 
@@ -27,19 +32,40 @@
   window.silktideConsentManager.init({
     consentTypes: [
       {
-        id: 'analytics',
-        label: 'Analytics',
-        description: 'These help us understand how visitors interact with the website.',
-        defaultValue: false,
-        gtag: 'analytics_storage'
-      },
-      {
         id: 'essential',
         label: 'Essential',
-        description: 'These are required for the website to work properly.',
+        description: '<p>Required for the website to function. These cannot be switched off.</p>',
         required: true
+      },
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: '<p>We collect anonymous, aggregate statistics about how this site is used (pages viewed, how far people scroll) solely to improve it, via Google Analytics. This is on by default under UK law (PECR statistical purposes exception). You can switch it off here at any time and we will stop immediately.</p>',
+        defaultValue: true,
+        gtag: 'analytics_storage',
+        onReject: function () {
+          // DUAA requires we actually stop: remove existing GA cookies
+          ['_ga', '_ga_RZK5H4CGJH'].forEach(function (n) {
+            document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.elodiesoler.com';
+            document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          });
+        }
+      },
+      {
+        id: 'recordings',
+        label: 'Session recordings',
+        description: '<p>With your consent, we use Microsoft Clarity to record anonymised sessions and heatmaps so we can see where the site confuses people. Off unless you switch it on.</p>',
+        defaultValue: false,
+        onReject: function () {
+          if (window.clarity) { window.clarity('stop'); }
+        }
       }
-    ]
+    ],
+    text: {
+      prompt: {
+        description: '<p>This site uses anonymous analytics by default to understand how it\u2019s used (allowed under UK law without consent \u2014 you can object below). Session recordings only run if you opt in.</p>'
+      }
+    }
   });
 </script>
 <!-- ===== END CONSENT ===== -->
