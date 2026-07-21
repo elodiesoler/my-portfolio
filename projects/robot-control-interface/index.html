@@ -189,9 +189,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section class="wrap">
+  <h2>The automation installers chose not to use</h2>
+  <p>The interface included an automated spray pattern mode. On site, installers
+     rarely used it: it required positioning the robot precisely in line with the
+     joists, and getting that alignment right was fiddly enough that manual spraying was easier.</p>
+  <p>So we made the spray pattern rotatable. Installers no longer had to move the
+     robot into a perfect position and they could rotate the pattern to meet the
+     joists instead. Use of the automated mode increased.</p>
+  <p>But most UK installers still chose manual control, and neither reason was a fault in
+     the automation: manual was faster in their hands and operating it themselves
+     was how they built and kept the skill.</p>
+  <p>That insight changed our brief. The question stopped being <em>how do we get installers
+     to use the automated mode</em> and became <em>how do we know the job is done
+     well, whichever mode they choose: the right thickness, applied the right
+     way.</em></p>
+
+</section>
+
+<section class="wrap">
   <h2>Designing within ROS</h2>
-  <p>Working end-to-end meant designing within the constraints of the robotics platform.</p>
-  <p>For instance, we explored displaying foam thickness as a live overlay on the camera feed, but building and maintaining it within ROS would have required significant effort for uncertain value. Instead, I designed a simple thickness readout in the corner of the screen. In field use, it provided the information operators needed at a glance, without the complexity of a full visual overlay.</p>
+  <p>We had to work within the constraints of the robotics platform.</p>
+  <p>We explored displaying foam thickness as a live overlay on the camera feed, but
+   building and maintaining it within ROS would have required significant effort for
+   uncertain value. Instead, I designed a simple thickness readout in the bottom left corner of
+   the screen. The installers get the information they need at a glance, without the complexity of a full visual
+   overlay.</p>
 </section>
 
 <div class="wide">
@@ -210,6 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="clean">
     <li>Maximises the primary camera feed to improve real-time visibility</li>
     <li>Surfaces essential controls directly within the main workflow</li>
+    <li>Reports foam thickness at a glance</li>
     <li>Enables navigation via a single input device (gamepad-inspired interaction), reducing friction</li>
     <li>Simplifies information architecture to support faster decision-making</li>
     <li>Introduces clearer system feedback (e.g. startup status) to improve operator confidence</li>
@@ -235,17 +258,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="kicker">From the field</span>
   <h2>What installers said</h2>
   <blockquote>
+    The fact that the spray pattern can be rotated makes it a lot easier to fill
+    areas near walls.
+    — David, Installer, Mersey Eco Grants
+</blockquote>
+  <blockquote>
     The Mk7 robots are a massive improvement compared to the previous version. The controls are much more user friendly.
     <cite>— Lee, Installer, Q-Bot</cite>
-  </blockquote>
-  <blockquote>
-    The fact that the spray pattern can be rotated makes it a lot easier to fill areas near walls.
-    <cite>— David, Installer, Mersey Eco Grants</cite>
   </blockquote>
   <blockquote>
     It's quicker and easier to control and the help manual is a great addition.
     <cite>— John, Installer, Concept Heating</cite>
   </blockquote>
+
 </section>
 
 <div class="wide">
