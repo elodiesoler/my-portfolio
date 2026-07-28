@@ -245,6 +245,8 @@ a:hover{text-decoration:underline;}
   .about-page .gallery figure{margin:0 0 18px;break-inside:avoid; object-fit: cover;}
   .about-page .gallery img{width:100%;height:auto;display:block;border-radius:var(--radius-sm);border:1px solid var(--line);
         box-shadow:var(--shadow);background:var(--surface-warm);}
+  .about-page .gallery figcaption{font-size:14px;color:var(--ink-faint);margin-top:10px;text-align:center;font-style:italic;}
+
   
 
   /* ---------- about page - image pair grid */
