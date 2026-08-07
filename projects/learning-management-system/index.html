@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Web Homepage Redesign | Case Study</title>
+<meta name="description" content="Product design case study for a high-constraint robot control interface that reduces interaction friction and improves operator performance in real-world field conditions.">
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="canonical" href="https://elodiesoler.com/projects/web-homepage-redesign/">
+<link rel="stylesheet" href="/styles.css">
+
+<!-- 1. Consent Mode defaults — opt-out model under PECR statistical purposes exception -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    // Granted unless the visitor has explicitly objected (DUAA opt-out)
+    analytics_storage: localStorage.getItem('stcm.consent.analytics') === 'false' ? 'denied' : 'granted',
+
+    // No advertising on this site — never granted
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+
+    // Essential is required and cannot be rejected
+    functionality_storage: 'granted',
+    security_storage: 'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: '<p>Required for the website to function. These cannot be switched off.</p>',
+        required: true
+      },
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: '<p>Anonymous, aggregate usage statistics (Google Analytics) to improve this site. On by default under UK law; switch off any time.</p>',
+        defaultValue: true,
+        gtag: 'analytics_storage',
+        onReject: function () {
+          // DUAA requires we actually stop: remove existing GA cookies
+          ['_ga', '_ga_RZK5H4CGJH'].forEach(function (n) {
+            document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.elodiesoler.com';
+            document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          });
+        }
+      },
+      {
+        id: 'recordings',
+        label: 'Session recordings',
+        description: '<p>Opt-in session recordings and heatmaps (Microsoft Clarity) to see where the site confuses people.</p>',
+        defaultValue: false,
+        onReject: function () {
+          if (window.clarity) { window.clarity('stop'); }
+        }
+      }
+    ],
+    text: {
+      prompt: {
+        description: '<p>This site uses anonymous analytics by default to understand how it\u2019s used (allowed under UK law without consent \u2014 you can object below). Session recordings only run if you opt in.</p>'
+      }
+    }
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body class="case-study-page">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- PAGE START -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about/">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero wide">
+  <div class="eyebrow rise d1">
+    <span class="tag">B2C</span>
+    <span class="tag">Web</span>
+    <span class="tag">2026</span>
+  </div>
+  <h1 class="rise d2">Homepage Redesign</h1>
+  <p class="lede rise d3">Restructuring Q-Bot's highest-entry webpage around evidence that most visitors already know the brand.</p>
+</header>
+
+<div class="wide rise d4">
+  <figure class="figure">
+    <img src="/images/projects/web-homepage-redesign/Homepage cover desktop and mob.png" alt="The redesigned Q-Bot homepage shown on desktop and mobile">
+  </figure>
+</div>
+
+<!-- ===== META STRIP ===== -->
+<div class="wrap">
+  <dl class="meta">
+    <div><dt>Type</dt><dd>End-to-end</dd></div>
+    <div><dt>Team</dt><dd>Myself + stakeholder reviews</dd></div>
+  </dl>
+</div>
+
+<!-- ===== METRICS BAND ===== -->
+<div class="wrap">
+  <div class="metrics">
+    <div class="metric">
+      <div class="num">17.8% &rarr; 24%</div>
+      <div class="lbl">pre-registered target: homepage to key-page progression</div>
+    </div>
+  
+  </div>
+</div>
+
+<!-- ===== CONTEXT ===== -->
+<section class="wrap">
+  <span class="kicker">Context</span>
+  <h2>The highest-entry page</h2>
+  <p>Q-Bot is a UK company offering robotic underfloor insulation: spray foam applied beneath suspended timber floors by a robot, requiring only a few floorboards to be lifted. It serves four core segments: owner-occupiers of suspended timber floors, park home owner-occupiers, landlords and social housing providers, and retrofit contractors, within a regulated retrofit landscape (PAS 2035, ECO4, GBIS, TrustMark, IBG).</p>
+  <p>The homepage is the site&rsquo;s highest-entry page, so any change to it carries outsized risk and opportunity. I treated the redesign as a structured experiment rather than a visual refresh: hypothesis first, pre-registered metrics and isolated changes wherever possible.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ===== CHALLENGE ===== -->
+<section class="wrap">
+  <span class="kicker">Challenge</span>
+  <h2>An awareness page for a brand-aware audience</h2>
+  <p>Traffic-source analysis showed a mismatch. The audience arriving on the homepage is largely brand-aware, with the large majority arriving via direct or branded organic search.But the page was structured as an awareness and education piece, explaining why insulation matters to visitors who had, in most cases, already searched for Q-Bot by name.</p>
+  <p>Six months of GA4 analysis quantified the cost. Fewer than one in five visitors progressed from the homepage to a key page and only a small fraction reached the Contact page. These visitors were scrolling deep and engaging with the content, but they just were not efficiently routed anywhere.</p>
+  <p><em>Exact visitor volumes and detailed funnel figures are confidential and omitted.</em></p>
+</section>
+
+<hr class="divider">
+
+<!-- ===== PROCESS ===== -->
+<section class="wrap">
+  <span class="kicker">Process</span>
+  <h2>Scope</h2>
+  <p>Before committing to a hypothesis, I ran the analysis through critical review. High intent is an inference, not a finding: "q-bot" aware traffic proves brand awareness but not purchase readiness. 
+    In addition, the single largest leak in the funnel was the drop-off between key pages and Contact, which is outside of this project. So I acknowledged explicitly what the homepage experiment can and cannot be credited with.</p>
+  <p><strong>Hypothesis:</strong> Visitors likely already know Q-Bot and are looking for proof, process clarity and next steps, but are not finding them quickly or clearly enough.</p>
+  </section>
+
+<div class="wide">
+  <figure class="figure-single">
+    <img src="/images/projects/web-homepage-redesign/Previous homepage design.png" alt="New homepage components: process overview, NPS banner and FAQ section">
+  </figure>
+</div>
+
+<section class="wrap">
+  <h2>Designing the experiment</h2>
+  <p>The redesign bundled five changes: a home suitability check, a 25-year insurance backed guarantee disclaimer, a social-proof banner, a process overview and the demotion of low-intent educational content further down the page.</p>
+  <p>Four simultaneous changes would normally make it impossible to know which one moved the numbers. So the demotion was split out as an independently measurable and reversible step, separately from the additions. Demoting rather than deleting also preserved SEO and AEO value (non-branded search capture, internal linking, AI answer-engine extraction) and kept serving the segments that genuinely need the "why".</p>
+</section>
+
+<section class="wrap">
+  <h2>Building within WordPress constraints</h2>
+  <p>Every component was built as a Raw HTML block as imposed by the WP Bakery page builder. That forced a set of defensive conventions: doubled-class selectors to override theme styles without <code>!important</code>, no bare element selectors (they bleed into theme layout), fallback values on every <code>var()</code> call since custom properties may not resolve inside Raw HTML blocks, and accessibility as standard: <code>prefers-reduced-motion</code> blocks, keyboard navigation, semantic headings, and ARIA attributes in every interactive component.</p>
+  <p>Each component file is duplicated and date-labelled before changes, preserving a rollback path for every iteration.</p>
+</section>
+
+<div class="wide">
+  <div class="grid2">
+    <figure class="figure"><img src="/images/projects/web-homepage-redesign/NPS design in progress.png" alt="NPS section design in progress"></figure>
+    <figure class="figure"><img src="/images/projects/web-homepage-redesign/Suitability check design in progress.png" alt="Suitability section design"></figure>
+  </div>
+</div>
+
+<div class="wide">
+  <figure class="figure-single">
+    <img src="/images/projects/web-homepage-redesign/Web homepage in wordpress.png" alt="Homepage in wordpress">
+  </figure>
+</div>
+
+<hr class="divider">
+
+<!-- ===== SOLUTION ===== -->
+<section class="wrap">
+  <span class="kicker">Solution</span>
+  <h2>Adapting the narrative to the audience</h2>
+  <p>The new page reorders the journey around proof, process and next steps:</p>
+  <ul class="clean">
+    <li>Hero &rarr; suitability check &rarr; 25-year IBG &rarr; benefits &rarr; accreditations &rarr; NPS banner &rarr; testimonials &rarr; three-step process</li>
+    <li>&ldquo;Why insulate and Mythbusters &rdquo; problem framing demoted below the conversion content</li>
+    <li>Closing CTA</li>
+  </ul>
+  <p>The intention is to enable faster trust-building, clearer value communication and reduced cognitive friction for a largely brand-aware audience. This will be measured by progression from homepage to key pages and homepage engagement.</p>
+</section>
+
+<div class="wide">
+  <div class="grid2">
+    <figure class="figure"><img src="/images/projects/web-homepage-redesign/Process banner viewed live.png" alt="Three-step process overview section on the new homepage"></figure>
+    <figure class="figure"><img src="/images/projects/web-homepage-redesign/Homepage cover.png" alt="New homepage hero"></figure>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+<!-- ===== OUTCOME ===== -->
+<section class="wrap">
+  <span class="kicker">Outcome</span>
+  <h2>Measurement is now live</h2>
+  <p>The new homepage was deployed on July 15th 2026, and the pre-registered measurement window is now running.</p>
+  <p>The experiment stands on a single pre-registered metric: progression from the homepage to key pages (17.8% before deployment) targeting 24% after, and compared on the same matched Jan-Jun window a year on. The target was derived from the baseline.</p>
+  <ul class="clean">
+    <li>Powered read: detecting a 17.8% &rarr; 24% shift needs roughly 700 post-launch visitors.</li>
+    <li>Interim readout: a directional measurement will be taken in Autumn 2026 for insight.</li>
+    <li>Hypothesis test: a matched messurement window (Jan–Jun 2027 vs Jan–Jun 2026 comparison) controlled for seasonality.</li>
+  </ul>
+  <p>Acknowledging the limitations: industry policy changes, marketing activity and competitor moves could influence the results. Results will be updated here.</p>
+  <a class="next" href="/projects/interactive-parts-system/">Next project →</a>
+</section>
+
+
+<!-- ===== CTA (mailto) ===== -->
+<section class="cta wrap">
+  <h2>Like how I think?</h2>
+  <p>I'm currently building side projects and am always happy to discuss or get involved in problem-solving challenges. Have something in mind? Get in touch.</p>
+  <a class="btn" id="email-cta" href="mailto:eloalisol@gmail.com?subject=Hello">Email me</a>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+    <div class="copy">Elodie Soler &copy; 2026 &middot; All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- PAGE END -->
+
+</body>
+</html>
