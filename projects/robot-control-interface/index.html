@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="tag">2020</span>
   </div>
   <h1 class="rise d2">Robot Control Interface for High Constraints Environment</h1>
-  <p class="lede rise d3">Improving how installers operate robotics systems in constrained environments by simplifying controls and increasing real-time visibility.</p>
+  <p class="lede rise d3">Reframing a robot control interface around the needs of installers, reducing friction in critical workflows and improving confidence in the field.</p>
 </header>
 
 <div class="wide rise d4">
@@ -124,10 +124,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== META STRIP ===== -->
 <div class="wrap">
   <dl class="meta">
-    <div><dt>Type</dt><dd>End-to-end</dd></div>
-    <div><dt>Team</dt><dd>Myself (design) + 2 engineers</dd></div>
+    <div><dt>Role</dt><dd>Product Owner & Product Designer</dd></div>
+    <div><dt>Team</dt><dd>Myself + 2 Engineers</dd></div>
   </dl>
 </div>
+
+<!-- ===== My ROLE ===== -->
+<section class="wrap">
+  <h2>My Role</h2>
+  <p>I owned the operator experience end-to-end, from identifying the biggest workflow problems through to prioritisation, product decisions, design and delivery.</p>
+  <p>As we were a small team, we took most decisions together. When someone felt strongly about a feature, they had to test their hypothesis to validate or disprove it.</p>
+</section>
 
 <!-- ===== METRICS BAND ===== -->
 <div class="wrap">
@@ -143,30 +150,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div> 
 
-<!-- ===== CONTEXT ===== -->
 <section class="wrap">
   <span class="kicker">Context</span>
-  <h2>Usability under real operational constraints</h2>
-  <p>After six generations of incremental changes, Q-Bot’s robot control interface had become difficult to evolve. A platform migration provided the opportunity to redesign the operator experience for underfloor insulation installs in occupied homes, improving scalability and usability in the field.</p>
-  <p>This meant designing for installers operating robots in confined, low-visibility spaces, where every interaction directly impacts speed, accuracy, and confidence. I led the redesign end-to-end, working closely with engineers and field operators to deliver a system that is still in use today across 50+ robots in the UK and France.</p>
+  <h2>An opportunity to rethink the operating interface</h2>
+  <p>While the system worked, the experience had become increasingly difficult to evolve and installers had developed workarounds to accommodate the software.</p>
+  <p>A platform backend migration created an opportunity to step back and rethink the product around the realities of operating a robot in occupied homes and confined, low-visibility spaces.</p>
 </section>
 
 <hr class="divider">
+
 
 <!-- ===== CHALLENGE ===== -->
 <section class="wrap">
   <span class="kicker">Challenge</span>
-  <h2>Friction in critical workflows</h2>
-  <p>Operators were already working in a challenging physical environment. The interface compounded that challenge with fragmented workflows, limited visibility, and unnecessary interactions, making critical tasks slower and more error-prone.</p>
-</section>
-
-<hr class="divider">
-
-<!-- ===== APPROACH ===== -->
-<section class="wrap">
-  <span class="kicker">Process</span>
-  <h2>Shadowed real installs</h2>
-  <p>Interviews and on-site observations showed that operators had to adapt to the software, rather than the software supporting the way they worked.</p>
+  <h2>Improve the workflow, not just the interface</h2>
+  <p>The pain point wasn't that the product lacked functionality. It was that the existing functionality didn't align with how installers actually worked.</p>
 </section>
 
 <div class="wide">
@@ -176,9 +174,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<hr class="divider">
+
+<!-- ===== STRATEGY ===== -->
 <section class="wrap">
-  <h2>Mapping the critical tasks</h2>
-  <p>I broke down the most frequent operator tasks to understand where time and effort were being lost. The friction came less from individual screens and more from moving between them: extra steps, device switching and divided attention.</p>
+  <span class="kicker">Product Strategy</span>
+  <h2>Prioritise the essential tasks</h2>
+  <p>Key initiatives included:</p>
+    <ul class="clean">
+    <li><strong>A simpler control model:</strong> I consolidated the primary interactions around a single gamepad-style input and brought essential controls into the main camera view. This reduced navigation and let installers keep their attention on the physical environment.</li>
+    <li><strong>Making automation fit the workflow:</strong> The automated spray pattern was rarely used because installers had to position the robot precisely before they could use it, which was often challenging with the amount of obstacles underneath the floor. So, the engineers managed to change the interaction: the ability to rotate the spray pattern to match the joists. This made automation very useful in the situations where it genuinely saved time, while preserving manual control when working around obstacles.</li>
+    <li><strong>Surfacing the information that mattered:</strong> We considered a sophisticated live foam-thickness overlay on the camera feed. We chose not to pursue it because the engineering effort required within ROS wasn't justified by the additional value. Instead, we prioritised a simple thickness readout that gave installers the information they needed at a glance.</li>
+    <li><strong>Providing robot status feedback:</strong> I created a startup status, so installers could understand what the robot was doing without having to interpret the interface or rely on support.</li>
+  </ul>
 </section>
 
 <div class="wide">
@@ -188,90 +196,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section class="wrap">
-  <h2>The automation UK installers didn't use</h2>
-  <p>The interface included an automated spray pattern mode. On site, installers
-     rarely used it: it required positioning the robot precisely in line with the
-     joists, and getting that alignment right was fiddly enough that manual spraying was easier.</p>
-  <p>So we made the spray pattern rotatable. Installers no longer had to move the
-     robot into a perfect position and they could rotate the pattern to meet the
-     joists instead.</p>
-  <p>They now use the automated pattern when the void is clear of rubbles, and switch to manual
-     when they need to spray around cables and pipes.</p>
-  <p>The question stopped being <em>how do we get installers to use the automated mode</em> and became <em>how do we know the installation is done
-     well on each job: the right thickness, applied the right way.</em></p>
-
-</section>
-
-<section class="wrap">
-  <h2>Designing within ROS</h2>
-  <p>We had to work within the constraints of the robotics platform.</p>
-  <p>We explored displaying foam thickness as a live overlay on the camera feed, but
-   building and maintaining it within ROS would have required significant effort for
-   uncertain value. Instead, I designed a simple thickness readout in the bottom left corner of
-   the screen. The installers get the information they need at a glance, without the complexity of a full visual
-   overlay.</p>
-</section>
-
-<div class="wide">
-  <figure class="figure-single">
-    <img src="/images/projects/robot-control-interface/mk7-mapping-2.jpg" alt="Process screenshot — interface mapping (2)">
- </figure>
-</div>
-
-<section class="wrap">
-  <h2>Diagnostic information design (2023)</h2>
-  <p>As a separate project, the engineering team looked at supporting onsite robot fault diagnosis. The robots can have more or less serious faults that are difficult to diagnose without specialist knowledge.</p>
-  <p>As a result, installers would often call the support team as soon as something didn’t work as expected.</p>
-  <p>An engineer on the team created the initial concept of showing the robot’s vitals to help installers understand the root cause of issues. I built on this idea by improving how the data was visualised, making it easier for installers to diagnose and resolve issues themselves rather than relying on support.</p>
-</section>
-
-<div class="wide">
-  <div class="grid2">
-  <figure class="figure"><img src="/images/projects/robot-control-interface/Engineer data vis screen.jpg" alt="Selected screens from design development">
-    <figcaption>Initial design from the engineer</figcaption></figure>
-  <figure class="figure"><img src="/images/projects/robot-control-interface/diagnosis screen testing with data.jpg" alt="Testing the design with real data">
-    <figcaption>Testing the new design with real data</figcaption>
-  </figure>
-</div>
-</div>
-
-
-<hr class="divider">
-
-<!-- ===== SOLUTION ===== -->
-<section class="wrap">
-  <span class="kicker">Solution</span>
-  <h2>A focused, scalable interface</h2>
-  <p>I designed a more focused and scalable interface that:</p>
-  <ul class="clean">
-    <li>Maximises the primary camera feed to improve real-time visibility</li>
-    <li>Surfaces essential controls directly within the main workflow</li>
-    <li>Reports foam thickness at a glance</li>
-    <li>Enables navigation via a single input device (gamepad-inspired interaction), reducing friction</li>
-    <li>Simplifies information architecture to support faster decision-making</li>
-    <li>Introduces clearer system feedback (e.g. startup status) to improve operator confidence</li>
+  <h2>What we chose not to do</h2>
+    <ul class="clean">
+      <li>We didn't create a complex visual overlay when a simpler readout was sufficient.</li>
+      <li>We didn't add new features, we removed the redundant ones.</li>
+      <li>We didn't optimise for feature adoption, we searched for the underlying usability issue.</li>
   </ul>
-  <p>The solution was developed iteratively, balancing user needs with the technical constraints of the robotics system (ROS).</p>
-  <div class="callout">
-    <span class="kicker">The key design move</span>
-    <p>Maximising the camera feed and moving to a single gamepad-inspired input, cutting interaction cost exactly where visibility and speed matter most.</p>
-  </div>
 </section>
-
-<div class="wide">
-  <div class="grid2">
-  <figure class="figure"><img src="/images/projects/robot-control-interface/gui-latest-screen.jpg" alt="Latest interface design — main control screen">
-  <figcaption>Navigation view</figcaption></figure>
-  <figure class="figure"><img src="/images/projects/robot-control-interface/gui-nav-bar.jpg" alt="Design system for navigation menu">
-  <figcaption>Design system</figcaption></figure>
-</div>
-</div>
-
-<div class="wide">
-  <figure class="figure-single">
-    <img src="/images/projects/robot-control-interface/Robot GUI status screen onsite.jpg" alt="Process screenshot — interface mapping (2)">
- <figcaption>Diagnosis screen tested onsite with installers</figcaption></figure>
-</div>
 
 <hr class="divider">
 
@@ -292,7 +223,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     It's quicker and easier to control and the help manual is a great addition.
     <cite>— John, Installer, Concept Heating</cite>
   </blockquote>
-
 </section>
 
 <div class="wide">
@@ -307,13 +237,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== IMPACT ===== -->
 <section class="wrap">
-  <span class="kicker">Outcome</span>
-  <h2>Measurable gains in the field</h2>
+  <span class="kicker">Outcomes</span>
+  <h2>A simpler product built around the job</h2>
+    <p>For the user:</p>
   <ul class="clean">
-    <li>Installers reported faster command input and switching (observed in the field, not formally measured)</li>
     <li>User satisfaction increased from 65% to 92%</li>
-    <li>Deployed across 50+ robots in the UK and France</li>
+    <li>Installers reported faster and easier control and switching</li>
+    <li>Installers have clearer visibility of key information while operating the robot</li>
   </ul>
+  <p>For the business:</p>
+  <ul class="clean">
+    <li>The simpler and scalable information architecture makes the feature management more cost efficient</li>
+    <li>The new interface reduces language barrier, enabling the company to expand installer partnerships in France</li>
+  </ul>
+  <p>The key shift was from building a better robot interface to building a product that better supported the installation job.</p>
   <a class="next" href="/projects/interactive-parts-system/">Next project →</a>
 </section>
 
