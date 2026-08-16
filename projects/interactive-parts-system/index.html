@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Interactive Parts System | Case Study</title>
-<meta name="description" content="A product design project that reduced equipment faults by 95% by transforming fragmented assembly instructions into an interactive parts system.">
+<meta name="description" content="New product that reduced equipment faults by 95% by transforming fragmented assembly instructions into an interactive parts system.">
 <link rel="icon" href="/images/shared/favicon.png">
 <link rel="canonical" href="https://elodiesoler.com/projects/interactive-parts-system/">
 <link rel="stylesheet" href="/styles.css">
@@ -111,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="tag">2022</span>
   </div>
   <h1 class="rise d2">Interactive Parts System</h1>
-  <p class="lede rise d3">Reducing equipment faults by 95% through improved assembly guidance and information design.</p>
+  <p class="lede rise d3">Reducing equipment faults by 95% by redesigning how installers find, understand and use assembly information.</p>
 </header>
 
 <div class="wide rise d4">
@@ -123,10 +123,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== META STRIP ===== -->
 <div class="wrap">
   <dl class="meta">
-    <div><dt>Type</dt><dd>End-to-end and 0 to 1</dd></div>
-    <div><dt>Team</dt><dd>Myself (design) + 1 engineer</dd></div>
+    <div><dt>Role</dt><dd>Product Manager & Product Designer</dd></div>
+    <div><dt>Team</dt><dd>Myself + 1 Engineer</dd></div>
   </dl>
 </div>
+
+<!-- ===== My ROLE ===== -->
+<section class="wrap">
+  <h2>My Role</h2>
+  <p>I owned the problem definition, product direction, prioritisation and end-to-end design, working with one engineer to take the solution from concept to implementation.</p>
+</section>
+
 
 <!-- ===== METRICS BAND ===== -->
 <div class="wrap">
@@ -141,19 +148,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== CONTEXT ===== -->
 <section class="wrap">
   <span class="kicker">Context</span>
-  <h2>Fragmented guidance for a complex assembly</h2>
-  <p>Q-Bot’s installation teams rely on a spray nozzle composed of a complex multi-part assembly, designed for reliable performance in real-world field conditions where consistent execution is critical to scaling robotic retrofit.</p>
-  <p>Installers had limited and fragmented reference materials:</p>
-  <ul class="clean">
-    <li>Small printed exploded diagrams attached to toolboxes</li>
-    <li>A 90-row spreadsheet used to identify and order parts</li>
-  </ul>
-  <p>This created a disconnect between:</p>
-  <ul class="clean">
-    <li>The physical assembly process</li>
-    <li>The way information was structured and accessed</li>
-  </ul>
-  <p>As a result, mis-assemblies and incorrect part orders were common, which directly impacted onsite performance.</p>
+  <h2>When information becomes an operational problem</h2>
+  <p>Q-Bot's installation teams rely on a complex multi-part spray nozzle to deliver robotic underfloor insulation.</p>
+  <p>Installers relied on small printed exploded diagrams to assemble their equipment, and the operations manager used a 90-row spreadsheet to find and order parts.</p>
+  <p>The result was a disconnect between how the equipment was assembled and how the information about it was structured.</p>
 </section>
 
 <div class="wide">
@@ -169,9 +167,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="wrap">
   <span class="kicker">Challenge</span>
   <h2>A self-reinforcing fault loop</h2>
-  <p>Frequent nozzle faults were not isolated issues. They were the result of a negative reinforcing loop: errors → downtime → incorrect fixes → repeated errors.</p>
-  <p>The problem wasn't installer capability, it was the information environment. The existing diagrams were not convenient to use and asked the installers to remember too much at once.</p>
-  <p>I mapped the main reinforcing loop that drove faults and the points where we intervened.</p>
+  <p>Nozzle faults were creating a recurring operational problem: assembly errors → equipment faults → downtime → incorrect fixes → repeated faults.</p>
+  <p>The existing documentation required installers to interpret diagrams, cross-reference part numbers and remember assembly relationships while working with a physical piece of equipment.</p>
+  <p>We identified an opportunity to break this loop at the information layer rather than trying to solve it through more training or more documentation.</p>
+  <p>Our research question was: How might we make the right assembly and part information easier to find and understand at the point of need?</p>
 </section>
 
 <div class="wide">
@@ -182,67 +181,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <hr class="divider">
 
-<!-- ===== APPROACH ===== -->
+<!-- ===== PRODUCT STRATEGY ===== -->
 <section class="wrap">
-  <span class="kicker">Process</span>
-  <h2>Learning from outside the industry</h2>
-  <p>I researched how others solve this for non-experts: IKEA guides, CAD tools. The insight that shaped everything: visual, step-revealed instruction beats dense reference mid-task.</p>
-  
-<div class="wide">
-  <div class="grid2">
-    <figure class="figure"><img src="/images/projects/interactive-parts-system/IKEA-example.jpg" alt="IKEA exploded diagram">
-    <figcaption>Show one step at a time.<br>(IKEA assembly instructions)</figcaption></figure>
-    <figure class="figure"><img src="/images/projects/interactive-parts-system/CAD-Exchanger.png" alt="Screenshot from CAD Exchanger Lab">
-    <figcaption>Isolate any single part on demand.<br>(CAD Exchanger Lab)</figcaption></figure>
-  </div>
-</div>
-
-  <p>I mapped the full onsite equipment ecosystem to ensure any solution would scale beyond the spray nozzle. Then, we ran a value/cost prioritisation exercise to focus development on high-impact, low-complexity features first.</p>
-  <p>We deprioritised visual maintenance walkthroughs due to high effort to produce and low impact on resolving faults, and focused first on shipping part-ID search.</p>
+  <span class="kicker">Product Strategy</span>
+  <h2>Reduce errors by changing the information environment</h2>
+  <p>Key initiatives included:</p>
+  <p><strong>Reveal complexity progressively:</strong> Show the information needed for the current task, when it is needed. I used interactive visual guidance rather than presenting the complete assembly and all its information at once.</p>
+  <p><strong>Make parts easily findable:</strong> The existing 90-row spreadsheet made identifying a part very difficult and resulted in wrong part orders. Part-ID search was the second feature added to enable the operations manager to easily access its relevant information.</p>
+  <p><strong>Make information task-focused:</strong> Installers could visually select a part to see its ID and add it to an order to request extra spares to the operations manager.</p>  
 </section>
 
-<div class="wide">
-  <div class="grid2">
-    <figure class="figure"><img src="/images/projects/interactive-parts-system/wireframe-2.png" alt="Wireframe sketch and ecosystem mapping (1)"></figure>
-    <figure class="figure"><img src="/images/projects/interactive-parts-system/wireframe-1.png" alt="Wireframe sketch and ecosystem mapping (2)"></figure>
-  </div>
-</div>
-
-<hr class="divider">
-
-<!-- ===== SOLUTION ===== -->
 <section class="wrap">
-  <span class="kicker">Solution</span>
-  <h2>An interactive parts diagram system</h2>
-  <div class="callout">
-    <span class="kicker">The key design move</span>
-    <p style="margin:0;">A 3D viewer would have meant complex API integration, so I used three fixed views instead. The constraint turned out to make the tool faster to use.</p>
-  </div>
-  <p>I simplified navigation to three fixed perspective views - front, bottom and top - keeping every component visible within Flutter's constraints. For task-focused assembly work, fixed views are quicker to navigate than free rotation: the user isn't manipulating a model, they're finding a part. And because the guidance is visual rather than written, it works regardless of the user's first language, so installers across the team could use it equally well.</p>
-</section>
-
-<div class="wide">
-  <figure class="figure-single">
-    <img src="/images/projects/interactive-parts-system/app-1.png" alt="Interactive parts app — search view">
-    <figcaption>Tap a part to access its ID and assembly order. Tap to add it to the cart.</figcaption>
-</figure>
-</div>
-
-<div class="wide">
-  <figure class="figure-single">
-    <img src="/images/projects/interactive-parts-system/app-3.png" alt="Interactive parts app — perspective view with cart">
-    <figcaption>Search a part by ID instantly, enabling onsite access to information previously locked in spreadsheets.</figcaption>
-</figure>
-</div>
-
-<section class="wrap">
-  <p>As a result, I designed an interactive parts diagram system that:</p>
-  <ul class="clean">
-    <li>Aligns digital representation with the physical assembly process</li>
-    <li>Breaks down complex assemblies into clear, navigable components</li>
-    <li>Links each part to relevant information (identification, ordering, usage)</li>
-    <li>Reduces reliance on memory by structuring information progressively</li>
-  </ul>
+  <h2>Trade-offs</h2>
+  <p><strong>Minimum viable product:</strong> A free-rotation 3D model initially seemed like the obvious way to represent the equipment. I chose not to build one. It would have required complex API integration and the installers didn't need to explore the equipment from every angle. I instead chose three fixed views: front, bottom and top. The core job-to-be-done, finding a specific part and understand where it belonged, was easier and quicker to achieve.</p>
+  <p><strong>Accepting a maintenance cost:</strong> The fixed-view approach relied on single, complete illustrations of the equipment. That created a known trade-off: if the equipment were significantly upgraded, the illustrations and their part references would need to be updated. We accepted this trade-off deliberately. The engineering team was confident in the new design, it had been well tested, and no further upgrades were planned. So the flexibility of a more complex system wasn't justified by the expected maintenance needs.</p>
 </section>
 
 <hr class="divider">
@@ -253,14 +205,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>What the team said</h2>
   <blockquote>
     It's made a big difference to how we train new installers, they pick up the assembly much faster.
-    <cite>— Dan, Training Manager, Q-Bot</cite>
+    <cite>— Dan, Training & Operations Manager, Q-Bot</cite>
   </blockquote>
 </section>
 
 <div class="wide">
   <div class="grid2">
+        <figure class="figure"><img src="/images/projects/interactive-parts-system/nozzle-app.png" alt="The interactive nozzle parts app"></figure>
     <figure class="figure"><img src="/images/projects/interactive-parts-system/training-newport.png" alt="Installer training session in Newport"></figure>
-    <figure class="figure"><img src="/images/projects/interactive-parts-system/nozzle-app.png" alt="The interactive nozzle parts app"></figure>
   </div>
 </div>
 
@@ -268,17 +220,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== IMPACT ===== -->
 <section class="wrap">
-  <span class="kicker">Outcome</span>
-  <h2>Breaking the cycle</h2>
+  <span class="kicker">Outcomes</span>
+  <h2>Breaking the fault loop</h2>
+  <p>The new system changed how installers accessed and used equipment information, replacing fragmented reference material with a single interactive source.</p>
+  <p>For the user, based on their feedback (not formally measured):</p>
+  <ul class="clean">
+    <li>Made the equipment cleaning and assembly process smoother and quicker</li>
+    <li>Reduced the learning curve for new installers</li>
+  
+  </ul>
+    <p>For the business:</p>
   <ul class="clean">
     <li>95% reduction in equipment faults</li>
-    <li>Reduced downtime and operational friction in the field</li>
-    <li>Broke the vicious cycle of repeated errors</li>
+    <li>Reduced associated downtime and operational disruption</li>
+    <li>Created a more scalable way to support equipment assembly for the business</li>
   </ul>
-  <blockquote>
-    Designing the right information environment can significantly reduce mistakes without changing the job-to-be-done.
-    <cite>— Key takeaway</cite>
-  </blockquote>
+  <p>The key lesson was that reducing operational errors didn't require asking installers to work differently, it required changing the information environment around the work.</p>
   <a class="next" href="/projects/quality-and-compliance-system/">Next project →</a>
 </section>
 
