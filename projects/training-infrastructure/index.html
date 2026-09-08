@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Scaling Training | Case Study</title>
+<meta name="description" content="How I chose and launched a training platform for safety-critical robotics, balancing product strategy, commercial opportunity, cost and organisational capacity.">
+<link rel="icon" href="/images/shared/favicon.png">
+<link rel="canonical" href="https://elodiesoler.com/projects/web-homepage-redesign/">
+<link rel="stylesheet" href="/styles.css">
+
+<!-- 1. Consent Mode defaults — opt-out model under PECR statistical purposes exception -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    // Granted unless the visitor has explicitly objected (DUAA opt-out)
+    analytics_storage: localStorage.getItem('stcm.consent.analytics') === 'false' ? 'denied' : 'granted',
+
+    // No advertising on this site — never granted
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+
+    // Essential is required and cannot be rejected
+    functionality_storage: 'granted',
+    security_storage: 'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager (self-hosted) -->
+<link rel="stylesheet" href="/assets/cm-ui.css">
+<script src="/assets/cm-ui.js"></script>
+
+<!-- 3. Banner configuration -->
+<script>
+  window.silktideConsentManager.init({
+    consentTypes: [
+      {
+        id: 'essential',
+        label: 'Essential',
+        description: '<p>Required for the website to function. These cannot be switched off.</p>',
+        required: true
+      },
+      {
+        id: 'analytics',
+        label: 'Analytics',
+        description: '<p>Anonymous, aggregate usage statistics (Google Analytics) to improve this site. On by default under UK law; switch off any time.</p>',
+        defaultValue: true,
+        gtag: 'analytics_storage',
+        onReject: function () {
+          // DUAA requires we actually stop: remove existing GA cookies
+          ['_ga', '_ga_RZK5H4CGJH'].forEach(function (n) {
+            document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.elodiesoler.com';
+            document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+          });
+        }
+      },
+      {
+        id: 'recordings',
+        label: 'Session recordings',
+        description: '<p>Opt-in session recordings and heatmaps (Microsoft Clarity) to see where the site confuses people.</p>',
+        defaultValue: false,
+        onReject: function () {
+          if (window.clarity) { window.clarity('stop'); }
+        }
+      }
+    ],
+    text: {
+      prompt: {
+        description: '<p>This site uses anonymous analytics by default to understand how it\u2019s used (allowed under UK law without consent \u2014 you can object below). Session recordings only run if you opt in.</p>'
+      }
+    }
+  });
+</script>
+<!-- ===== END CONSENT ===== -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLMG66MH');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body class="case-study-page">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLMG66MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- PAGE START -->
+
+<!-- ===== top nav ===== -->
+<nav class="nav">
+  <a href="/" class="brand">Elodie Soler</a>
+  <div class="links">
+    <a href="/">Projects</a>
+    <a href="/about/">About</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero wide">
+  <div class="eyebrow rise d1">
+    <span class="tag">B2B</span>
+    <span class="tag">2023-2024</span>
+  </div>
+  <h1 class="rise d2">Learning Infrastructure, Scope & Scale</h1>
+  <p class="lede rise d3">We needed a better way to manage training. The harder question was deciding what we were actually building for.</p>
+</header>
+
+<div class="wide rise d4">
+  <figure class="figure">
+    <img src="/images/projects/training-infrastructure/Handspray photo.JPG" alt="Installer spraying insulation">
+  </figure>
+</div>
+
+<!-- ===== META STRIP ===== -->
+<div class="wrap">
+  <dl class="meta">
+    <div><dt>Role</dt><dd>Product Lead</dd></div>
+    <div><dt>Team</dt><dd>Myself + Head of Program</dd></div>
+  </dl>
+</div>
+
+<!-- ===== My ROLE ===== -->
+<section class="wrap">
+  <h2>My Role</h2>
+  <p>I owned the problem definition, build-vs-buy analysis, vendor evaluation, pilot design, recommendation, commercial negotiation and phased implementation.</p>
+  <p>As we were a small team, we took most decisions together. When someone felt strongly about a feature, they had to test their hypothesis to validate or disprove it.</p>
+</section>
+
+<!-- ===== CONTEXT ===== -->
+<section class="wrap">
+  <span class="kicker">Context</span>
+  <h2>Training program</h2>
+  <p>Q-Bot installs underfloor insulation in confined spaces, which means dealing with safety and compliance requirements.</p>
+  <p>Training already existed, but the infrastructure didn't. Courses lived in PDFs and guides; completion was tracked in spreadsheets; refresher and competency records were maintained manually by depot managers and the training team.</p>
+  <p>The company was also scaling through partners. Every new partner multiplied a process that was already heavily administrative.</p>
+  <p>The trajectory was problematic.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ===== CHALLENGE ===== -->
+<section class="wrap">
+  <span class="kicker">Challenge</span>
+  <h2>The brief was smaller than the problem</h2>
+  <p>The initial brief was an installer companion app. Through cross-team discovery, we established that the underlying need was broader.</p>
+  <p>The same infrastructure required to support:</p>
+  <ul class="clean">
+    <li>Internal delivery teams and existing partners</li>
+    <li>Prospective partners during onboarding</li>
+    <li>Company-wide HR and compliance training</li>
+    <li>CPD-accredited content for customers and specifiers</li>
+  </ul>
+  <p>The fourth audience changed the business case. The first three primarily reduced operational cost; CPD could influence revenue by helping housing associations, retrofit coordinators, architects, managing agents and contractors understand a new retrofit technology.</p>
+  <p>The team estimated nearly £400k/year in operational savings and £1.34m/year in potential revenue influence.</p>
+  <p>That opportunity shaped the platform decision, and later exposed the biggest weakness in our thinking.</p>
+</section>
+
+<div class="wide">
+  <figure class="figure-single">
+    <img src="/images/projects/training-infrastructure/LMS Business cases.png" alt="Overview of business cases">
+  </figure>
+</div>
+
+<hr class="divider">
+
+<!-- ===== STRATEGY ===== -->
+<section class="wrap">
+  <span class="kicker">Product Strategy</span>
+  <h2>Buy the infrastructure, not the engineering problem</h2>
+  <p>As our engineering team was busy with other projects, we investigated having a thrid party build the LMS. After a quick research, I found that the feature set was largely commoditised.</p>
+  <p>I defined 12 initial requirements including multi-device support, SSO and integration with our existing systems. Several off-the-shelf platforms met most of our requirements, so we closed build-vs-buy quickly.</p>
+  <p><strong>Evaluate the architecture</strong></p>
+  <p>Vendor feature grids looked similar. The differentiators emerged in technical discussions.</p>
+  <p>I added requirements around APIs, authentication, webhooks, CORS and integration with our existing tools. This eliminated options that looked attractive on paper but would create significant engineering or support overhead.</p>
+  <p><strong>12 platforms reviewed → 7 benchmarked → 3 piloted</strong></p>
+  <p>I set the down-select criteria in advance: product fit, integration capability, low internal engineering dependency and total cost.</p>
+  <p><strong>Make the pilot answer specific questions</strong></p>
+  <p>Rather than asking which platform people liked most, I separated the pilot into four questions:</p>
+     <ul class="clean">
+    <li>Could it deliver our essential training at a reasonable cost?</li>
+    <li>How was the administrator experience?</li>
+    <li>How was the learner experience?</li>
+    <li>Could the backend, API and security capabilities support our product direction?</li>
+  </ul>
+  <p>Installers tested the learner experience. Platform administrators tested authoring and user management. Engineering assessed API, authentication, webhooks and GDPR.</p>
+  <p>The result wasn't simply a winner. It gave us a clearer specification for the dashboard we actually needed.</p>
+</section>
+
+<div class="wide">
+  <figure class="figure-single">
+    <img src="/images/projects/training-infrastructure/Benchmark research overview.png" alt="Benchmark research">
+  </figure>
+</div>
+
+<hr class="divider">
+
+<!-- ===== TRADE-OFFS ===== -->
+<section class="wrap">
+  <span class="kicker">Trade-offs</span>
+  <h2>Choosing for the strategy, not the cheapest scenario</h2>
+  <p>I recommended the most expensive option.</p>
+  <p>Under a 100-user scenario it cost almost twice the cheapest option. But its unlimited-user pricing made it significantly more attractive if the projected external growth materialised.</p>
+  <p>The strategic choice was straightforward: if we believed the £1.34m revenue opportunity, choosing a platform optimised only for the low-user scenario would undermine the strategy.</p>
+  <p>I negotiated a one-year contract with 10% discount rather than committing to a two-year deal. That preserved the option to reassess once we had evidence that the commercial opportunity was real. This became one of the most valuable decisions in the project.</p>
+  <p>We also had to accept known limitations. The platform lacked some desired requirements, but the pilot made these gaps explicit. That gave us the evidence to decide which trade-offs we were willing to accept.</p>
+</section>
+
+
+<hr class="divider">
+
+<!-- ===== IMPACT ===== -->
+<section class="wrap">
+  <span class="kicker">Outcomes</span>
+  <h2>Delivering the compliance mandate</h2>
+    <p>The platform went live in August 2023, with internal and external course rollout beginning in October.</p>
+   <p>What we achieved:</p>
+     <ul class="clean">
+    <li>100% compliance on mandatory training</li>
+    <li>50+ internal users onboarded at launch</li>
+    <li>14 mandatory courses moved from PDFs and manual sign-off into learning paths</li>
+    <li>Automated certification, refresher and expiry tracking</li>
+    <li>Compliance evidence became queryable rather than reconstructed from spreadsheets</li>
+  </ul>
+  <p>What we did not achieve:</p>
+       <ul class="clean">
+    <li>The projected efficiency gain was overstated. Tracking effort fell, but user setup and administration absorbed a significant part of the saving.</li>
+    <li>The revenue opportunity didn't materialise. The CPD portal launched, but the commercial team didn't commit the resources needed to use it meaningfully.</li>
+  </ul>
+  <p>The subscription was ended in November 2024 following a change in company direction. The one-year contract meant we could exit without being tied into a longer commitment.</p>
+</section>
+
+
+<hr class="divider">
+
+<!-- ===== LEARNINGS ===== -->
+<section class="wrap">
+  <span class="kicker">What I learned</span>
+  <h2>Scope is a product decision</h2>
+  <p>The projected revenue opportunity was not realised, not because the product couldn't support it, but because we didn't have the organisational capacity to make it happen.</p>
+  <p><strong>I scoped to the size of the opportunity rather than the size of the committed resource.</strong></p>
+  <p>What I'd do differently:</p>
+  <ul class="clean">
+    <li>Prove the operating model with one audience, then expand when there is a named owner and capacity to support it.</li>
+    <li>Treat ownership and available capacity as seriously as platform capability or cost.</li>
+    <li>Model the cost of change. Our business cases counted the work we would remove, but not enough of the administration we would add.</li>
+  </ul>
+  <p>The flexibility to reverse the decision after one year was ultimately more valuable than any feature on the comparison grid.</p>
+  <a class="next" href="/projects/interactive-parts-system/">Next project →</a>
+</section>
+
+
+<!-- ===== CTA (mailto) ===== -->
+<section class="cta wrap">
+  <h2>Like how I think?</h2>
+  <p>I'm currently building side projects and am always happy to discuss or get involved in problem-solving challenges. Have something in mind? Get in touch.</p>
+  <a class="btn" id="email-cta" href="mailto:eloalisol@gmail.com?subject=Hello">Email me</a>
+</section>
+
+<!-- ===== footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="links">
+      <a href="https://www.linkedin.com/in/elodie-soler/">LinkedIn</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+    <div class="copy">Elodie Soler &copy; 2026 &middot; All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- PAGE END -->
+
+</body>
+</html>
